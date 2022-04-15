@@ -5,6 +5,9 @@ import styles from "../styles/Home.module.css";
 //import layout
 import Layout from "../components/layout";
 
+// import components
+import Intro from "../components/intro";
+
 import { constants } from "../libs/constants";
 
 export default function Home() {
@@ -21,7 +24,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout></Layout>
+      <Layout>
+        <Intro />
+      </Layout>
     </div>
   );
 }
