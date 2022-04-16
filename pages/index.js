@@ -1,19 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 //import layout
 import Layout from "../components/layout";
 
 // import components
-import Intro from "../components/intro";
+import Intro from "../components/hero/intro";
 
 import { constants } from "../libs/constants";
 
 export default function Home() {
   const { site_name, site_author, site_description } = constants;
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>
           {site_author}
