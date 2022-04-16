@@ -1,0 +1,60 @@
+/* pulse animation runs 1 time */
+.pulse {
+  animation: pulse 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 1.5s;
+  will-change: opacity, transform;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  99% {
+    transform: scale(6, 6);
+    height: 135%;
+    opacity: 0;
+  }
+  100% {
+    height: 0%;
+    opacity: 0;
+  }
+}
+
+.fadein {
+  will-change: opacity scale;
+  animation: fadein 2s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.pulsing {
+  animation: pulsing 4s infinite;
+  position: absolute;
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(1.04);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.04);
+  }
+}
