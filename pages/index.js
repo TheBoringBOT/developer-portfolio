@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 
 // import components
 import Intro from "../components/hero/intro";
+import Projects from "../components/projects";
 
 import { constants } from "../libs/constants";
 
@@ -25,6 +26,7 @@ export default function Home() {
 
       <Layout>
         <Intro />
+        <Projects />
       </Layout>
     </div>
   );
