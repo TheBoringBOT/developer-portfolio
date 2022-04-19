@@ -3,6 +3,7 @@ import Head from "next/head";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 import Link from "next/link";
 import ErrorPage from "next/error";
+import ExportedImage from "next-image-export-optimizer";
 
 import { projectsData } from "../../data/projects";
 
@@ -44,14 +45,14 @@ const Product = ({ props }) => {
 
   return (
     <>
-    {/* custom seo for page */}
+      {/* custom seo for page */}
       <Head>
         <title>
           Project
           {" | "}
           {title}
         </title>
-        <meta name="description" content={ description_short} />
+        <meta name="description" content={description_short} />
       </Head>
       <motion.div exit={{ opacity: 0 }}>
         <motion.div initial="initial" animate="animate">
@@ -60,15 +61,24 @@ const Product = ({ props }) => {
             <div className="box col-span-6 lg:h-full">
               <div className="flex justify-center items-center h-full">
                 <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
-                  <motion.img
-                    className="h-full min-h-[300px] max-h-[45vh] p-10"
+                  <motion.div
+                    className="h-auto w-[450px] max-w-[45vw] p-20 relative pt-[100%] "
                     key={image}
-                    src={image}
                     animate={{ x: 0, opacity: 1 }}
                     initial={{ x: 200, opacity: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ delay: 0.2 }}
-                  />
+                  >
+                    {" "}
+                    <div className="w-full h-full ">
+                      <ExportedImage
+                        objectFit="contain"
+                        layout="fill"
+                        src={image}
+                        className="absolute top-0 left-0 w-full h-full "
+                      />
+                    </div>
+                  </motion.div>
                 </motion.div>
               </div>
             </div>

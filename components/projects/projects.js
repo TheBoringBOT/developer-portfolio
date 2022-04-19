@@ -82,10 +82,10 @@ const projectCard = ({ project, index }) => {
       >
         <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
           <ExportedImage
-            width="600"
-            height="600"
+            objectFit="contain"
+            layout="fill"
             alt={project.title}
-            className="overflow-hidden rounded-3xl  w-full h-full"
+            className="overflow-hidden rounded-3xl  w-full h-full "
             src={project.image}
           />
         </div>
@@ -98,9 +98,8 @@ const projectCard = ({ project, index }) => {
 
 const projectsLeft = [
   {
-    // image:
-    //   "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
-    image: "https://arielbeninca.com/img/clubworx.jpg",
+    image:
+      "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
     title: "Project 1",
     url: "/project/1",
   },
