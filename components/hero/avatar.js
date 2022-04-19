@@ -9,8 +9,8 @@ export default function Avatar() {
         <div className="p-3 rounded-full w-full h-full bg-ghost-bg border border-ghost-border z-10">
           <ExportedImage
             layout="fill"
-            objectFit="cover"
-            className=" rounded-full w-full h-full"
+            objectFit="contain"
+            className=" rounded-full w-full h-full p-3"
             src="https://i.pravatar.cc/300"
             alt="Gareth Richards"
           />

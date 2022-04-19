@@ -13,7 +13,7 @@ export default function footer({ setModalOpen }) {
           </h4>
           <button
             onClick={() => setModalOpen(true)}
-            className="text-blue font-medium text-2xl mt-8 hover:underline"
+            className="text-highlight transition-all duration-200 font-medium text-2xl mt-8 hover:underline hover:highlight-hover"
           >
             <span className="flex items-center space-x-4">
               {" "}

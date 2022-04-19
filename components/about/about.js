@@ -29,7 +29,7 @@ const aboutText = [
   "I have worked with clients all over the 🌎 ",
   "I am 🇬🇧 but based in Sweden.",
   "Want to know more?",
-  <button className="text-blue font-bold  mt-8 hover:underline">
+  <button className="text-highlight  font-bold  mt-8 hover:underline hover:text-highlight-hover  transition-all duration-200">
     <span className="flex items-center space-x-4">
       {" "}
       View Resume <IoChevronForward />{" "}

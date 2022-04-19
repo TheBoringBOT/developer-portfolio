@@ -21,7 +21,7 @@ export default function intro({ setModalOpen }) {
           <div>
             <button
               onClick={() => setModalOpen(true)}
-              className="text-blue font-semibold text-3xl mt-4 hover:underline"
+              className="text-highlight font-semibold text-3xl mt-4 hover:underline hover:text-highlight-hover"
             >
               <span className="flex items-center space-x-4">
                 {" "}
