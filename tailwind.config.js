@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -6,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: "#007AFF",
-        "blue-hover": "#0077ED",
+        // highlight: "#007AFF",
+        "highlight-hover": "#0077ED",
+        highlight: "#fe2851",
+        "highlight-hover": "#fe3d62",
         black: "#1D1D1F",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
