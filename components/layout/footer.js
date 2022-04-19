@@ -2,7 +2,7 @@ import { getFullYear } from "../../utils/date-formatter";
 import { IoChevronForward } from "react-icons/io5";
 import { constants } from "../../libs/constants";
 
-export default function footer() {
+export default function footer({ setModalOpen }) {
   const { site_author, site_version, site_description } = constants;
   return (
     <footer className="h-[90vh] min-h-[600px] max-h-[900px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-light-grey">
@@ -11,7 +11,10 @@ export default function footer() {
           <h4 className="gradient-title text-6xl md:text-8xl font-bold  ">
             Would you like to contact me?
           </h4>
-          <button className="text-blue font-medium text-2xl mt-8 hover:underline">
+          <button
+            onClick={() => setModalOpen(true)}
+            className="text-blue font-medium text-2xl mt-8 hover:underline"
+          >
             <span className="flex items-center space-x-4">
               {" "}
               Send me a message <IoChevronForward />{" "}
