@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ExportedImage from "next-image-export-optimizer";
 
 //framer motion imports for parallax
 import {
@@ -74,17 +75,20 @@ export default function projects({ runAnimation }) {
 
 const projectCard = ({ project, index }) => {
   return (
-    <Link
-      href={project.url}
-      key={index}
-      className="transition-transform duration-200 cursor-pointer rounded-3xl
-      w-full h-full overflow-hidden bg-light-grey "
-    >
-      <div className="w-full h-full hover:scale-[103%] transition-transform relative ">
-        <img
-          className="overflow-hidden rounded-3xl  w-full h-full"
-          src={project.image}
-        />
+    <Link href={project.url} key={index}>
+      <div
+        className="transition-transform duration-200 cursor-pointer rounded-3xl
+      w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey flex flex-1 pt-[100%] relative "
+      >
+        <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
+          <ExportedImage
+            width="600"
+            height="600"
+            alt={project.title}
+            className="overflow-hidden rounded-3xl  w-full h-full"
+            src={project.image}
+          />
+        </div>
       </div>
     </Link>
   );
