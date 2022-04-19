@@ -4,7 +4,7 @@ import Footer from "./footer";
 export default function index({ children }) {
   return (
     <>
-      <div className="min-h-screen max-w-5xl mx-auto text-black">
+      <div className="min-h-screen max-w-7xl mx-auto px-10 text-black">
         {/* <Header /> */}
 
         <main>{children}</main>
