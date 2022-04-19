@@ -8,7 +8,7 @@ const nextConfig = {
     nextImageExportOptimizer: {
       imageFolderPath: "public/images",
       exportFolderPath: "out",
-      quality: 75,
+      quality: 95,
     },
   },
   env: {
