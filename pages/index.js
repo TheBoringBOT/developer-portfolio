@@ -37,9 +37,7 @@ export default function Home() {
 
         <Layout setModalOpen={setModalOpen}>
           {modalOpen && <Modal setModalOpen={setModalOpen} />}
-          <a onClick={() => setModalOpen(true)} className="text-6xl text-blue">
-            <h1>open</h1>
-          </a>
+
           <Intro setModalOpen={setModalOpen} />
           <Projects runAnimation={isMobile ? false : true} />
           <About />
