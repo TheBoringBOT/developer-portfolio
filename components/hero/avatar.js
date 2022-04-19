@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./avatar.module.css";
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Avatar() {
   return (
     <>
       <div className="rounded-full flex items-center justify-center w-60 h-60 mb-12 relative">
         <div className="p-3 rounded-full w-full h-full bg-ghost-bg border border-ghost-border z-10">
-          <img
+          <ExportedImage
+            layout="fill"
+            objectFit="cover"
             className=" rounded-full w-full h-full"
             src="https://i.pravatar.cc/300"
             alt="Gareth Richards"
