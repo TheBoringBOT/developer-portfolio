@@ -87,7 +87,7 @@ const Product = ({ props }) => {
             <div className="box col-span-6 bg-white lg:h-full">
               <div className="flex flex-col items-center lg:justify-start  px-10 py-16 md:py-40 lg:px-20  2xl:px-40 h-full">
                 <motion.div variants={stagger} className="space-y-10">
-                  <Link href="/">
+                  <Link href="/" passHref>
                     <motion.div variants={fadeInUp}>
                       <button className="text-highlight hover:text-highlight-hover  transition-all duration-200 hover:underline">
                         <span className="flex items-center space-x-4 ">
@@ -125,7 +125,7 @@ const Product = ({ props }) => {
                       </a>
                       <a
                         href={code}
-                        className=" transition-all  text-dark-grey hover:text-black font-semibold  hover:underline"
+                        className=" transition-all  text-black hover:text-black font-normal  hover:underline"
                       >
                         <span className="flex items-center space-x-4">
                           {" "}

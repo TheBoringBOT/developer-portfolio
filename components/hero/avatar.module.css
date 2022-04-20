@@ -3,7 +3,7 @@
   animation: pulse 1.2s cubic-bezier(0.65, 0, 0.35, 1);
   animation-iteration-count: 1;
   animation-fill-mode: both;
-  animation-delay: 1.5s;
+  animation-delay: 0.5s;
   will-change: opacity, transform;
 }
 

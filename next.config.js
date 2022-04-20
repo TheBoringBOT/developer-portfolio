@@ -13,6 +13,8 @@ const nextConfig = {
   },
   env: {
     storePicturesInWEBP: true,
+    TawkPropertyId: "625fd8d87b967b11798b9791",
+    TawkKeyId: "1g136e47n",
   },
 };
 

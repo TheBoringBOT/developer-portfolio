@@ -5,17 +5,20 @@ import { motion } from "framer-motion";
 export default function about() {
   return (
     <>
-      <div className="space-y-20 my-44">
+      <div className="space-y-20 my-44 text-4xl   lg:text-[5.3rem] leading-tight  font-bold">
         {aboutText.map((text, index) => {
           return (
-            <motion.p
-              className="text-4xl   lg:text-[5.3rem] leading-tight font-bold"
-              key={index}
-            >
-              {text}
-            </motion.p>
+            <div key={index}>
+              <motion.p>{text}</motion.p>
+            </div>
           );
         })}
+        <button className="text-highlight  font-bold  mt-8 hover:underline hover:text-highlight-hover  transition-all duration-200">
+          <span className="flex items-center space-x-4">
+            {" "}
+            View Resume <IoChevronForward />{" "}
+          </span>
+        </button>
       </div>
     </>
   );
@@ -29,10 +32,5 @@ const aboutText = [
   "I have worked with clients all over the 🌎 ",
   "I am 🇬🇧 but based in Sweden.",
   "Want to know more?",
-  <button className="text-highlight  font-bold  mt-8 hover:underline hover:text-highlight-hover  transition-all duration-200">
-    <span className="flex items-center space-x-4">
-      {" "}
-      View Resume <IoChevronForward />{" "}
-    </span>
-  </button>,
+  ,
 ];

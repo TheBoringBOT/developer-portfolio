@@ -2,9 +2,6 @@ import { useState } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
-//import modal
-import Modal from "../components/modal";
-
 //import layout
 import Layout from "../components/layout";
 
@@ -12,12 +9,12 @@ import Layout from "../components/layout";
 import Intro from "../components/hero/intro";
 import Projects from "../components/projects/projects";
 import About from "../components/about/about";
+import liveChat from "../components/liveChat";
 
 import { constants } from "../libs/constants";
 import useWindowSize from "../hooks/useWindowSize";
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(false);
   const { site_name, site_author, site_description } = constants;
 
   // check if device is mobile - used mostly to stop some animations on mobile
@@ -35,10 +32,9 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Layout setModalOpen={setModalOpen}>
-          {modalOpen && <Modal setModalOpen={setModalOpen} />}
-
-          <Intro setModalOpen={setModalOpen} />
+        <Layout>
+          <button onClick={() => liveChat()}>oepnenenen</button>
+          <Intro />
           <Projects runAnimation={isMobile ? false : true} />
           <About />
         </Layout>

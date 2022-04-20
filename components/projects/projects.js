@@ -32,18 +32,22 @@ const fadeInUp = {
     transition: {
       duration: 1,
       ease: easing,
+      delay: 2,
     },
   },
 };
 
-export default function projects({ runAnimation }) {
+export default function Projects({ runAnimation }) {
   let yValue1, yValue2;
+  const { scrollYProgress } = useViewportScroll();
+  yValue1 = useTransform(scrollYProgress, [0, 1], ["-5%", "10%"]);
+  yValue2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  if (runAnimation) {
-    const { scrollYProgress } = useViewportScroll();
-    yValue1 = useTransform(scrollYProgress, [0, 1], ["-5%", "10%"]);
-    yValue2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  }
+  // if (runAnimation) {
+  //   const { scrollYProgress } = useViewportScroll();
+  //   yValue1 = useTransform(scrollYProgress, [0, 1], ["-5%", "10%"]);
+  //   yValue2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  // }
 
   //TODO create a function to create two columns of cards with one array and not two seperate ones
   return (
@@ -75,21 +79,23 @@ export default function projects({ runAnimation }) {
 
 const projectCard = ({ project, index }) => {
   return (
-    <Link href={project.url} key={index}>
-      <div
-        className="transition-transform duration-200 cursor-pointer rounded-3xl
+    <Link href={project.url} key={index} passHref>
+      <a>
+        <div
+          className="transition-transform duration-200 cursor-pointer rounded-3xl
       w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey flex flex-1 pt-[100%] relative "
-      >
-        <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
-          <ExportedImage
-            objectFit="contain"
-            layout="fill"
-            alt={project.title}
-            className="overflow-hidden rounded-3xl  w-full h-full "
-            src={project.image}
-          />
+        >
+          <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
+            <ExportedImage
+              objectFit="contain"
+              layout="fill"
+              alt={project.title}
+              className="overflow-hidden rounded-3xl  w-full h-full "
+              src={project.image}
+            />
+          </div>
         </div>
-      </div>
+      </a>
     </Link>
   );
 };
