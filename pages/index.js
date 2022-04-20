@@ -10,12 +10,14 @@ import Intro from "../components/hero/intro";
 import Projects from "../components/projects/projects";
 import About from "../components/about/about";
 import liveChat from "../components/liveChat";
+import Modal from "../components/modal";
 
 import { constants } from "../libs/constants";
 import useWindowSize from "../hooks/useWindowSize";
 
 export default function Home() {
   const { site_name, site_author, site_description } = constants;
+  const [modalOpen, setModalOpen] = useState(false);
 
   // check if device is mobile - used mostly to stop some animations on mobile
   const isMobile = useWindowSize().width < 768;
@@ -32,9 +34,9 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Layout>
-          <button onClick={() => liveChat()}>oepnenenen</button>
-          <Intro />
+        {modalOpen && <Modal setModalOpen={setModalOpen} />}
+        <Layout setModalOpen={setModalOpen}>
+          <Intro setModalOpen={setModalOpen} />
           <Projects runAnimation={isMobile ? false : true} />
           <About />
         </Layout>
