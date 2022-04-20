@@ -1,6 +1,7 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
+import useWindowSize from "../../hooks/useWindowSize";
 
 //framer motion imports for parallax
 import {
@@ -10,70 +11,76 @@ import {
   useMotionValue,
 } from "framer-motion";
 
-let easing = [0.6, -0.05, 0.01, 0.99];
+export default function Projects() {
+  const isNotMobile = useWindowSize().width > 768;
+  const [runAnimation, setRunAnimation] = useState(false);
 
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
+  useEffect(() => {
+    setRunAnimation(isNotMobile);
+  }, [isNotMobile]);
 
-const fadeInUp = {
-  initial: {
-    y: 90,
-    opacity: 0,
-    transition: { duration: 1, ease: easing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: easing,
-      delay: 2,
-    },
-  },
-};
-
-export default function Projects({ runAnimation }) {
   let yValue1, yValue2;
+
   const { scrollYProgress } = useViewportScroll();
   yValue1 = useTransform(scrollYProgress, [0, 1], ["-5%", "10%"]);
   yValue2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
-  // if (runAnimation) {
-  //   const { scrollYProgress } = useViewportScroll();
-  //   yValue1 = useTransform(scrollYProgress, [0, 1], ["-5%", "10%"]);
-  //   yValue2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  // }
+  let easing = [0.6, -0.05, 0.01, 0.99];
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const fadeInUp = {
+    initial: {
+      y: 90,
+      opacity: 0,
+      transition: { duration: 1, ease: easing },
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: easing,
+        delay: 2,
+      },
+    },
+  };
 
   //TODO create a function to create two columns of cards with one array and not two seperate ones
   return (
-    <div className="grid md:grid-cols-2 gap-10 mt-10 ">
-      {/* column 1 */}
-      <motion.div variants={fadeInUp} initial="initial" animate="animate">
-        <motion.div style={{ y: yValue1 }} className="flex flex-col space-y-8">
-          {projectsLeft.map((project, index) => {
-            return projectCard({ project, index });
-          })}
+    <>
+      <div className="grid md:grid-cols-2 md:gap-10 mt-10 space-y-8 md-space-y-0 ">
+        {/* column 1 */}
+        <motion.div variants={fadeInUp} initial="initial" animate="animate">
+          <motion.div
+            style={{ y: runAnimation ? yValue1 : 0 }}
+            className="flex flex-col space-y-8"
+          >
+            {projectsLeft.map((project, index) => {
+              return projectCard({ project, index });
+            })}
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* column 2 */}
-      <motion.div variants={fadeInUp} initial="initial" animate="animate">
-        <motion.div
-          style={{ y: yValue2 }}
-          variants={fadeInUp}
-          className="flex flex-col space-y-8"
-        >
-          {projectsRight.map((project, index) => {
-            return projectCard({ project, index });
-          })}
+        {/* column 2 */}
+        <motion.div variants={fadeInUp} initial="initial" animate="animate">
+          <motion.div
+            style={{ y: runAnimation ? yValue2 : 0 }}
+            className="flex flex-col space-y-8"
+          >
+            {projectsRight.map((project, index) => {
+              return projectCard({ project, index });
+            })}
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 }
 
