@@ -5,7 +5,7 @@ import { constants } from "../../libs/constants";
 export default function footer() {
   const { site_author, site_version, site_description } = constants;
   return (
-    <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-light-grey">
+    <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white">
       <div className="max-w-5xl mx-auto items-center flex flex-col px-10 md:px-0">
         <div className="flex flex-col justify-center items-center mt-auto ">
           <h4 className="pt-10 gradient-title text-6xl md:text-8xl font-bold  ">
