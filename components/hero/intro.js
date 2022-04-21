@@ -39,12 +39,12 @@ export default function intro() {
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <h1 className=" text-2xl md:text-[2.3rem]  font-bold text-grey block">
+              <h1 className=" text-3xl leading-tight md:text-[2.3rem]  font-bold text-grey block">
                 Full Stack Developer.
               </h1>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <span className="text-5xl md:text-6xl lg:text-[5.3rem] font-bold  ">
+              <span className="text-[3.3rem] leading-tight md:text-6xl lg:text-[5.3rem] font-bold  ">
                 Gareth Richards
               </span>
             </motion.div>
