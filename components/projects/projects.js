@@ -47,7 +47,7 @@ export default function Projects() {
       transition: {
         duration: 1,
         ease: easing,
-        delay: 2,
+        delay: 1.3,
       },
     },
   };
@@ -55,7 +55,7 @@ export default function Projects() {
   //TODO create a function to create two columns of cards with one array and not two seperate ones
   return (
     <>
-      <div className="grid md:grid-cols-2 md:gap-10 mt-10 space-y-8 md-space-y-0 ">
+      <div className="grid md:grid-cols-2 md:gap-10 mt-10 space-y-8 md-space-y-0 pb-20 md:pb-24 lg:pb-30 ">
         {/* column 1 */}
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <motion.div
