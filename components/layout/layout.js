@@ -1,10 +1,10 @@
 import Header from "./header";
 import Footer from "./footer";
 
-export default function index({ children }) {
+export default function Layout({ children }) {
   return (
     <>
-      <div className="min-h-screen max-w-7xl mx-auto px-10 text-black">
+      <div className="min-h-screen mx-auto  text-black">
         {/* <Header /> */}
 
         <main>{children}</main>
