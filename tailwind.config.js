@@ -8,10 +8,10 @@ module.exports = {
     extend: {
       colors: {
         // highlight: "#007AFF",
-        "highlight-hover": "#0077ED",
+        // "highlight-hover": "#0077ED",
         highlight: "#fe2851",
         "highlight-hover": "#fe3d62",
-        black: "#1D1D1F",
+        black: "#1d1d1f",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
         "dark-grey": "#86868B",
