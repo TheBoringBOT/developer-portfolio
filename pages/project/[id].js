@@ -67,7 +67,11 @@ const Product = ({ props }) => {
                     animate={{ x: 0, opacity: 1 }}
                     initial={{ x: 200, opacity: 0 }}
                     exit={{ opacity: 0 }}
-                    transition={{ delay: 0.2 }}
+                    transition={{
+                      delay: 0.2,
+                      duration: 0.5,
+                      x: { type: "spring", stiffness: 100 },
+                    }}
                   >
                     {" "}
                     <div className="w-full h-full ">
@@ -84,7 +88,7 @@ const Product = ({ props }) => {
             </div>
 
             {/* project details */}
-            <div className="box col-span-6 bg-white lg:h-full">
+            <div className="col-span-6   bg-white lg:h-full">
               <div className="flex flex-col items-center lg:justify-start  px-10 py-16 md:py-40 lg:px-20  2xl:px-40 h-full">
                 <motion.div variants={stagger} className="space-y-10">
                   <Link href="/" passHref>
@@ -109,8 +113,8 @@ const Product = ({ props }) => {
                     {description}
                   </motion.p>
                   <motion.div variants={fadeInUp} className="space-y-5">
-                    <span className="font-semibold">Tech Stack:</span>
-                    <div className="space-y-5 space-x-5">
+                    <span className="font-semibold ">Tech Stack:</span>
+                    <div className="gap-y-5 gap-x-5 flex items-center flex-wrap ">
                       {techStack(stack)}
                     </div>
                   </motion.div>
