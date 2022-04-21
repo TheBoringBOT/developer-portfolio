@@ -3,7 +3,7 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 //import layout
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 
 // import components
 import Intro from "../components/hero/intro";
@@ -36,8 +36,10 @@ export default function Home() {
 
         {modalOpen && <Modal setModalOpen={setModalOpen} />}
         <Layout setModalOpen={setModalOpen}>
-          <Intro setModalOpen={setModalOpen} />
-          <Projects runAnimation={isMobile ? false : true} />
+          <div className="max-w-7xl mx-auto px-10">
+            <Intro setModalOpen={setModalOpen} />
+            <Projects runAnimation={isMobile ? false : true} />
+          </div>
           <About />
         </Layout>
       </motion.div>
