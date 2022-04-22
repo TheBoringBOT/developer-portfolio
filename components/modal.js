@@ -1,7 +1,9 @@
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { IoClose } from "react-icons/io5";
+import ContactForm from "./contact-form";
 
-export default function modal({ setModalOpen }) {
+export default function modal({ setModalOpen, props }) {
   return (
     <Transition appear show={true} as={Fragment}>
       <Dialog
@@ -39,34 +41,22 @@ export default function modal({ setModalOpen }) {
             leaveTo="opacity-0 scale-95"
           >
             <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white border-2 border-text-primary solid-shadow-2 ">
-              <Dialog.Title
-                as="h3"
-                className="text-3xl  font-semibold mb-4 leading-7  text-gray-900"
-              >
-                About this application
-              </Dialog.Title>
-              <div className="mt-2">
-                <p className="text-md mono-font text-text-secondary">
-                  This app was created to assist in getting your email to the
-                  recipient inbox and avoid the spam folder. <br />
-                  <br /> It's using an extensive list of known spam words which
-                  is used when analyzing your email content. <br />
-                  <br />
-                  This app may be extended to incorporate more features at some
-                  point. <br />
-                  <br />
-                  Happy days 🌞
-                </p>
-              </div>
-
-              <div className="mt-8">
-                <button
-                  type="button"
-                  className="wave-me transition duration-300 ease-in-out inline-flex justify-center px-4 py-2 text-sm font-medium text-text-primary bg-accent border-2 border-text-primary solid-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                  onClick={() => setModalOpen(false)}
+              <div className="flex justify-center">
+                <Dialog.Title
+                  as="h3"
+                  className="text-3xl  font-semibold  leading-7  text-gray-900  py-5"
                 >
-                  Close Me<span className="wave ml-1"> 🙌🏻</span>
-                </button>
+                  Get In touch 👋
+                </Dialog.Title>
+                <span
+                  onClick={() => setModalOpen(false)}
+                  className="text-dark-grey absolute right-3 top-3 hover:text-black cursor-pointer"
+                >
+                  <IoClose />
+                </span>
+              </div>
+              <div className="mt-2">
+                <ContactForm props={props} setModalOpen={setModalOpen} />
               </div>
             </div>
           </Transition.Child>
