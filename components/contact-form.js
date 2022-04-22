@@ -83,6 +83,7 @@ export default function contactForm({ props, setModalOpen }) {
             className=" no-resize appearance-none block w-full bg-light-grey text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
             required
             name="message"
+            maxlength="300"
             placeholder="I want to carry my music collection in my pocket, let's talk about it..."
           ></textarea>
           <div className="flex items-center justify-start">
