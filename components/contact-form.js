@@ -88,7 +88,7 @@ export default function contactForm({ props, setModalOpen }) {
           ></textarea>
           <div className="flex items-center justify-start">
             <p className="text-gray-600 text-xs italic mr-2">
-              Dont' like forms?
+              Don't like forms?
             </p>
             <a
               className=" text-xs underline text-highlight hover:text-highlight-hover"
