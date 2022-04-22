@@ -1,7 +1,7 @@
 import Header from "./header";
 import Footer from "./footer";
 
-export default function Layout({ children }) {
+export default function Layout({ children,setModalOpen }) {
   return (
     <>
       <div className="min-h-screen mx-auto  text-black">
@@ -9,7 +9,7 @@ export default function Layout({ children }) {
 
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer setModalOpen={setModalOpen} />
     </>
   );
 }
