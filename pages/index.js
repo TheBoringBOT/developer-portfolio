@@ -35,7 +35,6 @@ export default function Home(props) {
 
         {modalOpen && <Modal props={props} setModalOpen={setModalOpen} />}
         <Layout setModalOpen={setModalOpen}>
-          <h1>dddd{props.secret}</h1>
           <div className="max-w-7xl mx-auto px-10">
             <Intro setModalOpen={setModalOpen} />
             <Projects runAnimation={isMobile ? false : true} />
@@ -47,22 +46,6 @@ export default function Home(props) {
   );
 }
 
-// // get the enviroment variables
-// export const getServerSideProps = () => {
-//   console.log("ddddd");
-//   return {
-//     // props: {
-//     //   service_id: process.env.EMAILJS_SERVICE_ID,
-//     //   public_key: process.env.EMAILJS_PUBLIC_KEY,
-//     //   private_key: process.env.EMAILJS_PRIVATE_KEY,
-//     //   template_id: process.env.EMAILJS_TEMPLATE_ID,
-//     // },
-//     props: {
-//       test: "ddid",
-//     },
-//   };
-// };
-
 export async function getStaticProps() {
   return {
     props: {
@@ -70,6 +53,6 @@ export async function getStaticProps() {
       private_key: process.env.EMAILJS_PRIVATE_KEY,
       service_id: process.env.EMAILJS_SERVICE_ID,
       template_id: process.env.EMAILJS_TEMPLATE_ID,
-    }, // will be passed to the page component as props
+    },
   };
 }
