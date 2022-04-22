@@ -31,7 +31,7 @@ const fadeInUp = {
   },
 };
 
-export default function intro() {
+export default function intro({ setModalOpen }) {
   return (
     <>
       <section className="h-[75vh] min-h-[650px]  flex flex-col  items-center text-center lg:max-w-5xl   mx-auto">
@@ -49,7 +49,10 @@ export default function intro() {
               </span>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <button className="tracking-tight text-highlight font-semibold text-3xl mt-4 hover:underline hover:text-highlight-hover">
+              <button
+                onClick={setModalOpen}
+                className="tracking-tight text-highlight font-semibold text-3xl mt-4 hover:underline hover:text-highlight-hover"
+              >
                 <span className="flex items-center space-x-4">
                   {" "}
                   Contact Me <IoChevronForward />{" "}
