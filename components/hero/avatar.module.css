@@ -3,7 +3,7 @@
   animation: pulse 1.2s cubic-bezier(0.65, 0, 0.35, 1);
   animation-iteration-count: 1;
   animation-fill-mode: both;
-  animation-delay: 0.5s;
+  animation-delay: 0.8s;
   will-change: opacity, transform;
 }
 
@@ -28,7 +28,7 @@
   animation: fadein 2s linear;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
-  animation-delay: 2.5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes fadein {
@@ -56,5 +56,22 @@
 
   100% {
     transform: scale(1.04);
+  }
+}
+
+.scaleDown {
+  will-change: transform;
+  animation: heroImgScale 0.8s ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes heroImgScale {
+  from {
+    transform: scale(2, 2);
+  }
+  to {
+    transform: scale(1, 1);
   }
 }
