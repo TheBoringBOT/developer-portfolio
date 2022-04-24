@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 
@@ -13,10 +13,26 @@ import Modal from "../components/modal";
 
 import { constants } from "../libs/constants";
 import useWindowSize from "../hooks/useWindowSize";
+import LoadingAnimation from "../components/hero/loading-animation";
 
 export default function Home(props) {
   const { site_name, site_author, site_description } = constants;
   const [modalOpen, setModalOpen] = useState(false);
+  // check if local storage has
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  //for loading animation on first load
+  useEffect(() => {
+    const showLoader = localStorage.getItem("showLoader");
+    showLoader === "false" ? setIsLoading(false) : setIsLoading(true);
+
+    setTimeout(() => {
+      console.log("loaded");
+      setIsLoading(false);
+      localStorage.setItem("showLoader", false);
+    }, 1000);
+  }, []);
 
   // check if device is mobile - used mostly to stop some animations on mobile
   const isMobile = useWindowSize().width < 768;
@@ -35,11 +51,16 @@ export default function Home(props) {
 
         {modalOpen && <Modal props={props} setModalOpen={setModalOpen} />}
         <Layout setModalOpen={setModalOpen}>
-          <div className="max-w-7xl mx-auto px-10">
-            <Intro setModalOpen={setModalOpen} />
-            <Projects runAnimation={isMobile ? false : true} />
-          </div>
-          <About />
+          {isLoading && <LoadingAnimation />}
+          {!isLoading && (
+            <>
+              <div className="max-w-7xl mx-auto px-10">
+                <Intro setModalOpen={setModalOpen} />
+                <Projects runAnimation={isMobile ? false : true} />
+              </div>
+              <About />
+            </>
+          )}
         </Layout>
       </motion.div>
     </>
