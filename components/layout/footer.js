@@ -1,5 +1,7 @@
 import { getFullYear } from "../../utils/date-formatter";
-import { IoChevronForward } from "react-icons/io5";
+import { IoChevronForward, IoLogoGithub } from "react-icons/io5";
+import { MdAlternateEmail } from "react-icons/md";
+
 import { constants } from "../../libs/constants";
 
 export default function footer({ setModalOpen }) {
@@ -22,8 +24,22 @@ export default function footer({ setModalOpen }) {
           </button>
         </div>
         <div className="flex flex-col text-center justify-center  mt-auto py-10 text-dark-grey">
-          <span>{getFullYear()} All rights reserved.</span>
-          <span>Version: {site_version}</span>
+          <div className="flex space-x-5 justify-center items-center transition-all">
+            <a
+              className="hover:text-black"
+              href="https://github.com/TheBoringBOT"
+              target="_blank"
+            >
+              <IoLogoGithub size={22} />
+            </a>
+            <a className="hover:text-black" href="mailto:hi@garethrichards.dev">
+              <MdAlternateEmail size={22} />
+            </a>
+          </div>
+          <div className="flex flex-col pt-5">
+            <span>{getFullYear()} All rights reserved.</span>
+            <span>Version: {site_version}</span>
+          </div>
         </div>
       </div>
     </footer>
