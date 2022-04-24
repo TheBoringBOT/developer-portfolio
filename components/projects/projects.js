@@ -47,7 +47,7 @@ export default function Projects() {
       transition: {
         duration: 1,
         ease: easing,
-        delay: 1.3,
+        delay: 0.3,
       },
     },
   };

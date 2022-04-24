@@ -9,7 +9,7 @@ const stagger = {
   animate: {
     transition: {
       staggerChildren: 0.05,
-      delay: 1,
+      delay: 0,
     },
   },
 };
@@ -26,7 +26,7 @@ const fadeInUp = {
     transition: {
       duration: 1,
       ease: easing,
-      delay: 1,
+      delay: 0,
     },
   },
 };
@@ -35,7 +35,7 @@ export default function intro({ setModalOpen }) {
   return (
     <>
       <section className="h-[75vh] min-h-[650px]  flex flex-col  items-center text-center lg:max-w-5xl   mx-auto">
-        <div className="my-auto flex flex-col  items-center ">
+        <div className="mt-32  flex flex-col  items-center ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
