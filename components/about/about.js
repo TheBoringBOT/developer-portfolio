@@ -34,9 +34,9 @@ const About = () => {
   }
 
   return (
-    <div className="min-w-screen bg-light-grey text-black">
-      <div className="min-h-screen max-w-5xl  mx-auto px-10  lg:px-20 py-10 md:py-28 lg:py-36 flex flex-col justify-center items-center text-4xl md:text-6xl lg:text-7xl font-bold  ">
-        <div ref={refContainer} className="leading-[1.1]  tracking-tight">
+    <div className="text-black min-w-screen bg-light-grey">
+      <div className="flex flex-col items-center justify-center max-w-5xl min-h-screen px-10 py-10 mx-auto text-4xl font-bold lg:px-20 md:py-28 lg:py-36 md:text-6xl lg:text-[80px] ">
+        <div ref={refContainer} className="leading-[1.1]  tracking-tighter">
           {aboutText.map((text, i) => (
             <span
               key={i}
@@ -54,13 +54,14 @@ const About = () => {
 export default About;
 
 const aboutText = [
-  "I’m a developer with a diverse skill set, in areas such as design, coding, marketing & business.",
-  "I work usually with React, Laravel, MySQL, Vue, tailwind & more...",
-  "A 🇬🇧 based in Sweden with clients all over the 🌎 ",
+  "I’m a full-stack web developer with a diverse skill-set that enables me to work on a wide range of projects.",
+  "I am proficient in JavaScript, React, Redux, Node.js, MySQL, Vue, Laravel and more.",
+  "I also have experience within marketing, SEO, project management, and UI/UX design.",
+  "In my personal life I 💛 to read non-fiction 📕 go 🏂 and 🏃‍♂️💨 in the forest 🌳.",
 
   <>
-    <p> Want to see more details?</p>
-    <button className="text-highlight  font-bold  mt-3 hover:underline hover:text-highlight-hover  transition-all duration-200">
+    <p>Would you like to see a little more detail?</p>
+    <button className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover">
       <span className="flex items-center space-x-4">
         {" "}
         View Resume <IoChevronForward />{" "}
