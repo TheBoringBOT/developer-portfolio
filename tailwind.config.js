@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // highlight: "#007AFF",
-        // "highlight-hover": "#0077ED",
-        highlight: "#fe2851",
-        "highlight-hover": "#fe3d62",
+        highlight: "#007AFF",
+        "highlight-hover": "#0077ED",
+        // highlight: "#fe2851",
+        // "highlight-hover": "#fe3d62",
         black: "#1d1d1f",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
