@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
@@ -6,6 +7,10 @@ import ErrorPage from "next/error";
 import ExportedImage from "next-image-export-optimizer";
 
 import { projectsData } from "../../data/projects";
+
+const getProject = (id) => {
+  return projectsData[id];
+};
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -40,8 +45,16 @@ const Product = ({ props }) => {
   if (!props.project) {
     return <ErrorPage statusCode={404} />;
   }
-  const { title, image, description, description_short, stack, url, code } =
-    props.project;
+  const {
+    title,
+    image,
+    description,
+    description_short,
+    stack,
+    url,
+    code,
+    logo,
+  } = projectsData[props.project];
 
   return (
     <>
@@ -54,12 +67,13 @@ const Product = ({ props }) => {
         </title>
         <meta name="description" content={description_short} />
       </Head>
+
       <motion.div exit={{ opacity: 0 }}>
         <motion.div initial="initial" animate="animate">
-          <div className="grid grid-cols-6 md:grid-cols-12 min-h-screen bg-light-grey">
+          <div className="grid min-h-screen grid-cols-6 md:grid-cols-12 bg-light-grey">
             {/* Project mockup */}
-            <div className="box col-span-6 lg:h-full">
-              <div className="flex justify-center items-center h-full">
+            <div className="col-span-6 box lg:h-full">
+              <div className="flex items-center justify-center h-full">
                 <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
                   <motion.div
                     className="h-auto w-[450px] max-w-[45vw] p-20 relative pt-[100%] "
@@ -88,12 +102,12 @@ const Product = ({ props }) => {
             </div>
 
             {/* project details */}
-            <div className="col-span-6   bg-white lg:h-full">
-              <div className="flex flex-col items-center lg:justify-start  px-10 py-16 md:py-40 lg:px-20  2xl:px-40 h-full">
+            <div className="col-span-6 bg-white lg:h-full">
+              <div className="flex flex-col items-center h-full px-10 py-16 lg:justify-start md:py-40 lg:px-20 2xl:px-40">
                 <motion.div variants={stagger} className="space-y-10">
                   <Link href="/" passHref>
                     <motion.div variants={fadeInUp}>
-                      <button className="text-highlight hover:text-highlight-hover  transition-all duration-200 hover:underline">
+                      <button className="transition-all duration-200 text-highlight hover:text-highlight-hover hover:underline">
                         <span className="flex items-center space-x-4 ">
                           <IoChevronBack /> Back to home
                         </span>
@@ -101,10 +115,11 @@ const Product = ({ props }) => {
                     </motion.div>
                   </Link>
                   <motion.div variants={fadeInUp}>
-                    <span>Project</span>
+                    {/* <span>Project</span> */}
+                    {logo}
                   </motion.div>
                   <motion.h1
-                    className="text-4xl lg:text-6xl leading-tight font-bold"
+                    className="text-4xl font-bold leading-tight lg:text-6xl"
                     variants={fadeInUp}
                   >
                     {title}
@@ -114,22 +129,22 @@ const Product = ({ props }) => {
                   </motion.p>
                   <motion.div variants={fadeInUp} className="space-y-5">
                     <span className="font-semibold ">Tech Stack:</span>
-                    <div className="gap-y-5 gap-x-5 flex items-center flex-wrap ">
+                    <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
                       {techStack(stack)}
                     </div>
                   </motion.div>
 
-                  <motion.div variants={fadeInUp} className=" mt-20">
-                    <div className="space-x-10 flex items-center">
+                  <motion.div variants={fadeInUp} className="mt-20 ">
+                    <div className="flex items-center space-x-10">
                       <a
                         href={url}
-                        className="bg-highlight hover:bg-highlight-hover transition-all duration-200 rounded px-5 py-2 text-white font-semibold"
+                        className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
                       >
                         View Live
                       </a>
                       <a
                         href={code}
-                        className=" transition-all  text-black hover:text-black font-normal  hover:underline"
+                        className="font-normal text-black transition-all hover:text-black hover:underline"
                       >
                         <span className="flex items-center space-x-4">
                           {" "}
@@ -148,9 +163,11 @@ const Product = ({ props }) => {
   );
 };
 
-// get project data matching id in url
+//id in url
 Product.getInitialProps = ({ query: { id } }) => {
-  const project = projectsData[id];
+  const project = id;
+
+  console.table(project);
   return {
     props: {
       project,
@@ -164,7 +181,7 @@ const techStack = (stack) => {
     return (
       <span
         key={index}
-        className="bg-light-grey px-5 py-2 rounded text-sm text-dark-grey"
+        className="px-5 py-2 text-sm rounded bg-light-grey text-dark-grey"
       >
         {item}
       </span>
