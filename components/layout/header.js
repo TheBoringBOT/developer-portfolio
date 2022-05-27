@@ -4,15 +4,15 @@ export default function Header() {
   };
   return (
     <>
-      <div className="flex justify-between py-10 items-center font-medium text-lg ">
-        <div className="flex  items-center">
-          <span className="rounded-full w-8 h-8 bg-black"></span>
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between w-full max-w-6xl px-6 py-10 mx-auto text-lg font-medium ">
+        <div className="flex items-center">
+          <span className="w-6 h-6 bg-black rounded-full"></span>
         </div>
 
-        <nav className="flex justify-end space-x-5 items-center">
-          <a href="#">Resume</a>
-          <a href="#" className="text-white bg-black px-5 py-1 rounded ">
-            Contact
+        <nav className="flex items-center justify-end space-x-5 text-md text-dark-grey">
+          <a href="#">(Resume)</a>
+          <a href="#" className="">
+            (Github)
           </a>
         </nav>
       </div>
