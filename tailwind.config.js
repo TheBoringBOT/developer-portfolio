@@ -11,7 +11,7 @@ module.exports = {
         "highlight-hover": "#0077ED",
         // highlight: "#fe2851",
         // "highlight-hover": "#fe3d62",
-        black: "#1d1d1f",
+        black: "#2d2d3c",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
         "dark-grey": "#86868B",
