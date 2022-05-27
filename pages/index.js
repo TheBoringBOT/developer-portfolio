@@ -54,7 +54,7 @@ export default function Home(props) {
           {isLoading && <LoadingAnimation />}
           {!isLoading && (
             <>
-              <div className="max-w-7xl mx-auto px-10">
+              <div className="max-w-6xl px-10 mx-auto">
                 <Intro setModalOpen={setModalOpen} />
                 <Projects runAnimation={isMobile ? false : true} />
               </div>
