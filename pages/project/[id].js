@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { IoChevronForward, IoChevronBack } from "react-icons/io5";
@@ -54,6 +53,8 @@ const Product = ({ props }) => {
     url,
     code,
     logo,
+    features,
+    comingSoon,
   } = projectsData[props.project];
 
   return (
@@ -103,7 +104,7 @@ const Product = ({ props }) => {
 
             {/* project details */}
             <div className="col-span-6 bg-white lg:h-full">
-              <div className="flex flex-col items-center h-full px-10 py-16 lg:justify-start md:py-40 lg:px-20 2xl:px-40">
+              <div className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 lg:px-20 2xl:px-40">
                 <motion.div variants={stagger} className="space-y-10">
                   <Link href="/" passHref>
                     <motion.div variants={fadeInUp}>
@@ -114,10 +115,7 @@ const Product = ({ props }) => {
                       </button>
                     </motion.div>
                   </Link>
-                  <motion.div variants={fadeInUp}>
-                    {/* <span>Project</span> */}
-                    {logo}
-                  </motion.div>
+                  <motion.div variants={fadeInUp}>{logo}</motion.div>
                   <motion.h1
                     className="text-4xl font-bold leading-tight lg:text-6xl"
                     variants={fadeInUp}
@@ -127,6 +125,21 @@ const Product = ({ props }) => {
                   <motion.p variants={fadeInUp} className="text-xl font-normal">
                     {description}
                   </motion.p>
+
+                  {/* <motion.div variants={fadeInUp} className="space-y-5">
+                    <span className="font-semibold ">Key Features:</span>
+                    <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
+                      <ul className="ml-1 list-decimal">
+                        {featuresList(features)}
+                      </ul>
+                    </div>
+                  </motion.div> */}
+                  <motion.div variants={fadeInUp} className="space-y-5">
+                    <span className="font-semibold ">Key Features:</span>
+                    <div className="flex flex-col items-start gap-y-2 gap-x-5 ">
+                      {featuresList(features)}
+                    </div>
+                  </motion.div>
                   <motion.div variants={fadeInUp} className="space-y-5">
                     <span className="font-semibold ">Tech Stack:</span>
                     <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
@@ -136,21 +149,29 @@ const Product = ({ props }) => {
 
                   <motion.div variants={fadeInUp} className="mt-20 ">
                     <div className="flex items-center space-x-10">
-                      <a
-                        href={url}
-                        className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
-                      >
-                        View Live
-                      </a>
-                      <a
-                        href={code}
-                        className="font-normal text-black transition-all hover:text-black hover:underline"
-                      >
-                        <span className="flex items-center space-x-4">
-                          {" "}
-                          View Code <IoChevronForward />{" "}
+                      {!comingSoon ? (
+                        <>
+                          <a
+                            href={url}
+                            className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
+                          >
+                            View Live
+                          </a>
+                          <a
+                            href={code}
+                            className="font-normal text-black transition-all hover:text-black hover:underline"
+                          >
+                            <span className="flex items-center space-x-4">
+                              {" "}
+                              View Code <IoChevronForward />{" "}
+                            </span>
+                          </a>
+                        </>
+                      ) : (
+                        <span className="px-5 py-2 font-semibold text-blue-500 transition-all duration-200 border border-blue-500 rounded pointer-events-none animate-pulse">
+                          Coming Soon
                         </span>
-                      </a>
+                      )}
                     </div>
                   </motion.div>
                 </motion.div>
@@ -184,6 +205,18 @@ const techStack = (stack) => {
         className="px-5 py-2 text-sm rounded bg-light-grey text-dark-grey"
       >
         {item}
+      </span>
+    );
+  });
+};
+
+// map features list
+const featuresList = (features) => {
+  return features.map((item, index) => {
+    return (
+      <span key={index} className="relative">
+        <span className="absolute left-0 ">{index + 1}.</span>
+        <span className=" ml-5">{item}</span>
       </span>
     );
   });
