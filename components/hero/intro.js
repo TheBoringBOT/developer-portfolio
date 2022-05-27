@@ -35,7 +35,7 @@ export default function intro({ setModalOpen }) {
   return (
     <>
       <section className="h-[75vh] min-h-[650px]  flex flex-col  items-center text-center lg:max-w-5xl   mx-auto">
-        <div className="mt-32  flex flex-col  items-center ">
+        <div className="flex flex-col items-center mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
@@ -51,7 +51,7 @@ export default function intro({ setModalOpen }) {
             <motion.div variants={fadeInUp}>
               <button
                 onClick={setModalOpen}
-                className="tracking-tight text-highlight font-semibold text-3xl mt-4 hover:underline hover:text-highlight-hover"
+                className="mt-4 text-3xl font-semibold tracking-tight text-highlight hover:underline hover:text-highlight-hover"
               >
                 <span className="flex items-center space-x-4">
                   {" "}
