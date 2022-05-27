@@ -61,11 +61,15 @@ const aboutText = [
 
   <>
     <p>Would you like to see a little more detail?</p>
-    <button className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover">
+    <a
+      href="/Gareth_Richards_Resume.pdf"
+      target="_blank"
+      className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover"
+    >
       <span className="flex items-center space-x-4">
         {" "}
         View Resume <IoChevronForward />{" "}
       </span>
-    </button>
+    </a>
   </>,
 ];
