@@ -4,11 +4,10 @@ import Footer from "./footer";
 export default function Layout({ children, setModalOpen }) {
   return (
     <>
-      <div className="min-h-screen mx-auto text-black">
-        {/* <Header /> */}
-
-        <main>{children}</main>
-      </div>
+      {/* <Header /> */}
+      <main className="min-h-screen mx-auto text-black min-w-screen">
+        {children}
+      </main>
       <Footer setModalOpen={setModalOpen} />
     </>
   );
