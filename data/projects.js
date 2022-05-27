@@ -1,50 +1,86 @@
+import { soundXLogo, spamCheckerLogo, sireneLogo } from "./logo-data";
+
 export const projectsData = {
   1: {
-    title: "Project 1",
+    title: "E-commerce Store",
     image:
       "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Sirène is a full-stack e-commerce store with a clean modern polished design that enables customers to find and purchase products smoothly.",
     description_short:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: ["React", "Next.js", "Node.js", "Express"],
-    url: "https://www.google.com",
-    code: "https://www.google.com",
+      "Sirène is a full-stack e-commerce store with a clean modern polished design that enables customers to find and purchase products smoothly.",
+    features: [
+      "Checkout",
+      "Product Filtering & sorting",
+      "Product Search",
+      "CRM",
+    ],
+
+    stack: ["Laravel", "Vue", "MySQL", "Tailwind"],
+    url: "https://sirene.garethrichards.dev",
+    code: "https://github.com/TheBoringBOT/mnml-ecommerce",
+    logo: sireneLogo,
+    comingSoon: false,
   },
   2: {
-    title: "Project 2",
-    image:
-      "https://placehold.jp/30/ffcc00/ffffff/600x600.png?text=placeholder+image+2",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    description_short:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: ["React", "Next.js", "Node.js", "Express"],
-    url: "https://www.google.com",
-    code: "https://www.google.com",
-  },
-  3: {
-    title: "Project 3",
+    title: "Spam Word Checker",
     image:
       "https://placehold.jp/30/9873ff/ffffff/600x600.png?text=placeholder+image+3",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "A text editor for writing email copy that checks the content in real-time for known spam word triggers and highlights the offending words.",
     description_short:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: ["React", "Next.js", "Node.js", "Express"],
-    url: "https://www.google.com",
-    code: "https://www.google.com",
+      "A text editor for writing email copy that checks the content in real-time for known spam word triggers and highlights the offending words.",
+    features: [
+      "Word analysis",
+      "Word highlighting",
+      "Word count",
+      "Reading time",
+    ],
+    stack: ["React", "Tailwind", "Draft-Js"],
+    url: "https://spamchecker.garethrichards.dev",
+    code: "https://github.com/TheBoringBOT/email-spam-word-checker",
+    logo: spamCheckerLogo,
+    comingSoon: false,
   },
+  3: {
+    title: "Sound Sharing",
+    image:
+      "https://placehold.jp/30/ffcc00/ffffff/600x600.png?text=placeholder+image+2",
+    description:
+      "A sound sharing website for users to create a profile to display their sounds & fx and for others to download freely.",
+    description_short:
+      "A sound sharing website for users to create a profile to display their sounds & fx and for others to download freely.",
+    features: [
+      "Authentication",
+      "Audio processing & meta data capture",
+      "Tagging system",
+      "Audio Search",
+    ],
+    stack: ["Laravel", "Vue", "MySQL", "Tailwind"],
+    url: "https://soundx.garethricards.dev",
+    code: "https://github.com/TheBoringBOT/audioapp-laravel",
+    logo: soundXLogo,
+    comingSoon: false,
+  },
+
   4: {
-    title: "Project 4",
+    title: "Studio Moo",
     image:
       "https://placehold.jp/30/ff763c/ffffff/600x600.png?text=placeholder+image+4",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Studio Moo is an agency website with a focus on clean modern design that utilizes smooth refined animations and striking composition.",
     description_short:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: ["React", "Next.js", "Node.js", "Express"],
+      "Studio Moo is an agency website with a focus on clean modern design that utilizes smooth refined animations and striking composition.",
+    features: [
+      "Multi-step forms",
+      "Markdown blog",
+      "Advanced animations",
+      "Modern UI/UX",
+    ],
+
+    stack: ["React", "Next.js", "Tailwind", "Framer motion"],
     url: "https://www.google.com",
     code: "https://www.google.com",
+    comingSoon: true,
   },
 };
