@@ -58,7 +58,7 @@ const Product = ({ props }) => {
   } = projectsData[props.project];
 
   return (
-    <>
+    <section>
       {/* custom seo for page */}
       <Head>
         <title>
@@ -69,64 +69,69 @@ const Product = ({ props }) => {
         <meta name="description" content={description_short} />
       </Head>
 
-      <motion.div exit={{ opacity: 0 }}>
-        <motion.div initial="initial" animate="animate">
-          <div className="grid min-h-screen grid-cols-6 md:grid-cols-12 bg-light-grey">
-            {/* Project mockup */}
-            <div className="col-span-6 box lg:h-full">
-              <div className="flex items-center justify-center h-full">
-                <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
-                  <motion.div
-                    className="h-auto w-[450px] max-w-[45vw] p-20 relative pt-[100%] "
-                    key={image}
-                    animate={{ x: 0, opacity: 1 }}
-                    initial={{ x: 200, opacity: 0 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      delay: 0.2,
-                      duration: 0.5,
-                      x: { type: "spring", stiffness: 100 },
-                    }}
-                  >
-                    {" "}
-                    <div className="w-full h-full ">
-                      <ExportedImage
-                        objectFit="contain"
-                        layout="fill"
-                        src={image}
-                        className="absolute top-0 left-0 w-full h-full "
-                      />
-                    </div>
-                  </motion.div>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit={{ opacity: 0 }}
+        className="grid min-h-screen grid-cols-6 md:grid-cols-12 bg-light-grey"
+      >
+        {/* Project mockup */}
+        <div className="col-span-6 box lg:h-full">
+          <div className="flex items-center justify-center h-full">
+            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+              <motion.div
+                className="h-auto w-[450px] max-w-[45vw] p-20 relative pt-[100%] "
+                key={image}
+                animate={{ x: 0, opacity: 1 }}
+                initial={{ x: 200, opacity: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.5,
+                  x: { type: "spring", stiffness: 100 },
+                }}
+              >
+                {" "}
+                <figure className="w-full h-full ">
+                  <ExportedImage
+                    objectFit="contain"
+                    layout="fill"
+                    src={image}
+                    className="absolute top-0 left-0 w-full h-full "
+                  />
+                </figure>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* project details */}
+        <div className="col-span-6 bg-white lg:h-full">
+          <div className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 xl:px-20 2xl:px-40">
+            <motion.div variants={stagger} className="space-y-10">
+              <Link href="/" passHref>
+                <motion.div variants={fadeInUp}>
+                  <button className="transition-all duration-200 text-highlight hover:text-highlight-hover hover:underline">
+                    <span className="flex items-center space-x-4 ">
+                      <IoChevronBack /> Back to home
+                    </span>
+                  </button>
                 </motion.div>
-              </div>
-            </div>
+              </Link>
+              <motion.div variants={fadeInUp}>
+                <figure>{logo}</figure>
+              </motion.div>
+              <motion.h1
+                className="text-4xl font-bold leading-tight xl:text-6xl"
+                variants={fadeInUp}
+              >
+                {title}
+              </motion.h1>
+              <motion.p variants={fadeInUp} className="text-xl font-normal">
+                {description}
+              </motion.p>
 
-            {/* project details */}
-            <div className="col-span-6 bg-white lg:h-full">
-              <div className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 lg:px-20 2xl:px-40">
-                <motion.div variants={stagger} className="space-y-10">
-                  <Link href="/" passHref>
-                    <motion.div variants={fadeInUp}>
-                      <button className="transition-all duration-200 text-highlight hover:text-highlight-hover hover:underline">
-                        <span className="flex items-center space-x-4 ">
-                          <IoChevronBack /> Back to home
-                        </span>
-                      </button>
-                    </motion.div>
-                  </Link>
-                  <motion.div variants={fadeInUp}>{logo}</motion.div>
-                  <motion.h1
-                    className="text-4xl font-bold leading-tight lg:text-6xl"
-                    variants={fadeInUp}
-                  >
-                    {title}
-                  </motion.h1>
-                  <motion.p variants={fadeInUp} className="text-xl font-normal">
-                    {description}
-                  </motion.p>
-
-                  {/* <motion.div variants={fadeInUp} className="space-y-5">
+              {/* <motion.div variants={fadeInUp} className="space-y-5">
                     <span className="font-semibold ">Key Features:</span>
                     <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
                       <ul className="ml-1 list-decimal">
@@ -134,53 +139,53 @@ const Product = ({ props }) => {
                       </ul>
                     </div>
                   </motion.div> */}
-                  <motion.div variants={fadeInUp} className="space-y-5">
-                    <span className="font-semibold ">Key Features:</span>
-                    <div className="flex flex-col items-start gap-y-2 gap-x-5 ">
-                      {featuresList(features)}
-                    </div>
-                  </motion.div>
-                  <motion.div variants={fadeInUp} className="space-y-5">
-                    <span className="font-semibold ">Tech Stack:</span>
-                    <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
-                      {techStack(stack)}
-                    </div>
-                  </motion.div>
+              <motion.div variants={fadeInUp} className="space-y-5">
+                <span className="font-semibold ">Key Features:</span>
+                <div className="flex flex-col items-start gap-y-2 gap-x-5 ">
+                  {featuresList(features)}
+                </div>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="space-y-5">
+                <span className="font-semibold ">Tech Stack:</span>
+                <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
+                  {techStack(stack)}
+                </div>
+              </motion.div>
 
-                  <motion.div variants={fadeInUp} className="mt-20 ">
-                    <div className="flex items-center space-x-10">
-                      {!comingSoon ? (
-                        <>
-                          <a
-                            href={url}
-                            className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
-                          >
-                            View Live
-                          </a>
-                          <a
-                            href={code}
-                            className="font-normal text-black transition-all hover:text-black hover:underline"
-                          >
-                            <span className="flex items-center space-x-4">
-                              {" "}
-                              View Code <IoChevronForward />{" "}
-                            </span>
-                          </a>
-                        </>
-                      ) : (
-                        <span className="px-5 py-2 font-semibold text-blue-500 transition-all duration-200 border border-blue-500 rounded pointer-events-none animate-pulse">
-                          Coming Soon
+              <motion.div variants={fadeInUp} className="mt-20 ">
+                <div className="flex items-center space-x-10">
+                  {!comingSoon ? (
+                    <>
+                      <a
+                        href={url}
+                        target="_blank"
+                        className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
+                      >
+                        View Live
+                      </a>
+                      <a
+                        target="_blank"
+                        href={code}
+                        className="font-normal text-black transition-all hover:text-black hover:underline"
+                      >
+                        <span className="flex items-center space-x-4">
+                          {" "}
+                          View Code <IoChevronForward />{" "}
                         </span>
-                      )}
-                    </div>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
+                      </a>
+                    </>
+                  ) : (
+                    <span className="px-5 py-2 font-semibold text-blue-500 transition-all duration-200 border border-blue-500 rounded pointer-events-none animate-pulse">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
-    </>
+    </section>
   );
 };
 
@@ -216,7 +221,7 @@ const featuresList = (features) => {
     return (
       <span key={index} className="relative">
         <span className="absolute left-0 ">{index + 1}.</span>
-        <span className=" ml-5">{item}</span>
+        <span className="ml-5 ">{item}</span>
       </span>
     );
   });
