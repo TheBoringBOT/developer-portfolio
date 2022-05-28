@@ -8,10 +8,10 @@ export default function modal({ setModalOpen, props }) {
     <Transition appear show={true} as={Fragment}>
       <Dialog
         as="div"
-        className=" rounded fixed inset-0 z-10 overflow-y-auto"
+        className="fixed inset-0 z-10 overflow-y-auto rounded "
         onClose={() => setModalOpen(false)}
       >
-        <div className=" rounded min-h-screen px-4 text-center">
+        <div className="min-h-screen px-4 text-center rounded ">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -21,7 +21,7 @@ export default function modal({ setModalOpen, props }) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0  bg-dark-grey/75 backdrop-blur-lg" />
+            <Dialog.Overlay className="fixed inset-0 bg-dark-grey/7 dark:bg-black/50 backdrop-blur-lg" />
           </Transition.Child>
 
           {/* This element is to trick the browser into centering the modal contents. */}
@@ -40,17 +40,17 @@ export default function modal({ setModalOpen, props }) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="rounded inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white border-2 border-text-primary solid-shadow-2 ">
+            <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white border-2 rounded dark:bg-black dark:text-white border-text-primary dark:border-white/10 solid-shadow-2 ">
               <div className="flex justify-center">
                 {/* <Dialog.Title
                   as="h3"
-                  className="text-3xl  font-semibold  leading-7  text-gray-900  py-5"
+                  className="py-5 text-3xl font-semibold leading-7 text-gray-900"
                 >
                   Get In touch 👋
                 </Dialog.Title> */}
                 <span
                   onClick={() => setModalOpen(false)}
-                  className="text-dark-grey absolute right-3 top-3 hover:text-black cursor-pointer"
+                  className="absolute cursor-pointer text-dark-grey right-3 top-3 hover:text-black"
                 >
                   <IoClose />
                 </span>
