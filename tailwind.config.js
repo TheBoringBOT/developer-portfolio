@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: "class",
   important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,6 +13,7 @@ module.exports = {
         // highlight: "#fe2851",
         // "highlight-hover": "#fe3d62",
         black: "#1d1f1c",
+        "black-secondary": "#000",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
         "dark-grey": "#86868B",
