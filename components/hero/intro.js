@@ -34,18 +34,19 @@ const fadeInUp = {
 export default function intro({ setModalOpen }) {
   return (
     <>
-      <section className="h-[75vh] min-h-[650px]  flex flex-col  items-center text-center lg:max-w-5xl   mx-auto">
-        <div className="flex flex-col items-center mt-32 ">
+      <section className="flex flex-col items-center pb-32 mx-auto text-center  lg:max-w-5xl">
+        <div className="flex flex-col items-center mt-24 lg:mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <h1 className=" tracking-tight text-3xl leading-tight md:text-[2.3rem]  font-bold text-grey block">
-                Full Stack Developer.
+              <h1 className=" tracking-tight text-xl leading-tight md:text-[2.3rem]  font-bold text-grey block">
+                Gareth Richards
               </h1>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <span className=" tracking-tight text-[3.3rem] leading-tight md:text-6xl lg:text-[5.3rem] font-bold  ">
-                Gareth Richards
+              <span className=" tracking-tight text-2xl leading-tight md:text-6xl lg:text-[3.3rem] font-bold  ">
+                Hi, I’m Ariel Beninca. I create well thought out, beautiful
+                digital experiences & inject passion into every project.
               </span>
             </motion.div>
             <motion.div variants={fadeInUp}>

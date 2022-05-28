@@ -7,15 +7,15 @@ import { constants } from "../../libs/constants";
 export default function footer({ setModalOpen }) {
   const { site_author, site_version, site_description } = constants;
   return (
-    <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white">
-      <div className="max-w-5xl mx-auto items-center flex flex-col px-10 md:px-0">
-        <div className="flex flex-col justify-center items-center mt-auto ">
-          <h4 className="pt-10 gradient-title text-6xl md:text-8xl font-bold  ">
+    <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white dark:bg-black">
+      <div className="flex flex-col items-center max-w-5xl px-5 mx-auto md:px-0">
+        <div className="flex flex-col items-center justify-center mt-auto ">
+          <h4 className="pt-10 text-5xl font-bold gradient-title md:text-8xl ">
             Would you like to contact me?
           </h4>
           <button
             onClick={() => setModalOpen(true)}
-            className="text-highlight transition-all duration-200 font-medium text-2xl mt-8 hover:underline hover:highlight-hover"
+            className="mt-8 text-2xl font-medium transition-all duration-200 text-highlight hover:underline hover:highlight-hover"
           >
             <span className="flex items-center space-x-4">
               {" "}
@@ -23,8 +23,8 @@ export default function footer({ setModalOpen }) {
             </span>
           </button>
         </div>
-        <div className="flex flex-col text-center justify-center  mt-auto py-10 text-dark-grey">
-          <div className="flex space-x-5 justify-center items-center transition-all">
+        <div className="flex flex-col justify-center py-10 mt-auto text-center text-dark-grey">
+          <div className="flex items-center justify-center space-x-5 transition-all">
             <a
               className="hover:text-black"
               href="https://github.com/TheBoringBOT"

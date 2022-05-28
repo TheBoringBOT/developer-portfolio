@@ -6,7 +6,7 @@ import styles from "./about.module.css";
 const changeBlockOpacity = (sectionProgress, blockNo) => {
   const progress = sectionProgress - blockNo;
   if (progress >= 0 && progress < 1) return 1;
-  return 0.05;
+  return 0.08;
 };
 
 const About = () => {
@@ -34,17 +34,19 @@ const About = () => {
   }
 
   return (
-    <div className="text-black min-w-screen bg-light-grey">
+    <div className="text-black min-w-screen bg-light-grey dark:bg-black-secondary dark:text-light-grey">
       <div className="flex flex-col items-center justify-center max-w-5xl min-h-screen px-10 py-10 mx-auto text-4xl font-bold lg:px-20 md:py-28 lg:py-36 md:text-6xl lg:text-[80px] ">
         <div ref={refContainer} className="leading-[1.1]  tracking-tighter">
           {aboutText.map((text, i) => (
-            <span
-              key={i}
-              style={{ opacity: changeBlockOpacity(progress, i) }}
-              className={`${styles.text} inline-block after:content-['_'] my-3`}
-            >
-              {text}
-            </span>
+            <>
+              <span
+                key={i}
+                style={{ opacity: changeBlockOpacity(progress, i) }}
+                className={`${styles.text} inline-block after:content-['_'] my-3`}
+              >
+                {text}
+              </span>
+            </>
           ))}
         </div>
       </div>
