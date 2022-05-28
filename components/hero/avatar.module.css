@@ -41,13 +41,13 @@
   }
 }
 .pulsing {
-  animation: pulsing 4s infinite;
+  animation: pulsing 3s infinite;
   position: absolute;
 }
 
 @keyframes pulsing {
   0% {
-    transform: scale(1.04);
+    transform: scale(1.06);
   }
 
   70% {
@@ -55,7 +55,7 @@
   }
 
   100% {
-    transform: scale(1.04);
+    transform: scale(1.06);
   }
 }
 
