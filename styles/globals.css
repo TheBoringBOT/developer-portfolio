@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap");
 
+/* fix for framer motion overflow causing a bug on projects page */
+#__next {
+  overflow-x: hidden;
+}
 html,
 body {
   padding: 0;
