@@ -7,10 +7,10 @@ import { constants } from "../../libs/constants";
 export default function footer({ setModalOpen }) {
   const { site_author, site_version, site_description } = constants;
   return (
-    <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white dark:bg-black">
+    <footer className=" h-[95vh] md:h-[90vh] md:min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white dark:bg-black">
       <div className="flex flex-col items-center max-w-5xl px-5 mx-auto md:px-0">
         <div className="flex flex-col items-center justify-center mt-auto ">
-          <h4 className="pt-10 text-6xl font-bold gradient-title lg:text-8xl ">
+          <h4 className="pt-10 text-5xl font-bold md:text-6xl gradient-title lg:text-8xl ">
             Would you like to contact me?
           </h4>
           <button
@@ -26,13 +26,16 @@ export default function footer({ setModalOpen }) {
         <div className="flex flex-col justify-center py-10 mt-auto text-center text-dark-grey">
           <div className="flex items-center justify-center space-x-5 transition-all">
             <a
-              className="hover:text-black"
+              className="hover:text-black dark:hover:text-light-grey"
               href="https://github.com/TheBoringBOT"
               target="_blank"
             >
               <IoLogoGithub size={22} />
             </a>
-            <a className="hover:text-black" href="mailto:hi@garethrichards.dev">
+            <a
+              className="hover:text-black dark:hover:text-light-grey"
+              href="mailto:hi@garethrichards.dev"
+            >
               <MdAlternateEmail size={22} />
             </a>
           </div>

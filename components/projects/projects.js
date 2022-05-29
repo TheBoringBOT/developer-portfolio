@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 
 export default function Projects() {
-  const isNotMobile = useWindowSize().width > 768;
+  const isNotMobile = useWindowSize().width > 767;
   const [runAnimation, setRunAnimation] = useState(false);
 
   useEffect(() => {
@@ -90,16 +90,16 @@ const projectCard = ({ project, index }) => {
       <a>
         <div
           className="transition-transform duration-200 cursor-pointer rounded md:rounded-xl lg:rounded-2xl
-      w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey flex flex-1 pt-[100%] relative "
+      w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey dark:bg-white/5 transition-bg duration-300 flex flex-1 pt-[100%] relative "
         >
           <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
-            <ExportedImage
+            {/* <ExportedImage
               objectFit="contain"
               layout="fill"
               alt={project.title}
               className="w-full h-full overflow-hidden rounded md:rounded-xl lg:rounded-2xl "
               src={project.image}
-            />
+            /> */}
           </div>
         </div>
       </a>

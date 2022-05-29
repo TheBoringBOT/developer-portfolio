@@ -34,8 +34,8 @@ const fadeInUp = {
 export default function intro({ setModalOpen }) {
   return (
     <>
-      <section className="flex flex-col items-center mx-auto text-center pb-36 lg:max-w-5xl">
-        <div className="flex flex-col items-center mt-24 lg:mt-32 ">
+      <section className="flex flex-col items-center mx-auto text-center pb-28 xl:pb-36 lg:max-w-5xl">
+        <div className="flex flex-col items-center mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
@@ -44,14 +44,14 @@ export default function intro({ setModalOpen }) {
               </span>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <h1 className="leading-snug dark:text-light-grey text-black text-[3.3rem]  md:text-6xl lg:text-[5.3rem]  font-bold pb-2 ">
+              <h1 className="leading-snug dark:text-white text-black text-[2.85rem]  md:text-6xl lg:text-[5.3rem]  font-bold pb-2 ">
                 Web Developer & Designer.
               </h1>
             </motion.div>
             <motion.div variants={fadeInUp}>
               <button
                 onClick={setModalOpen}
-                className="mt-4 text-3xl font-semibold tracking-tight text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
+                className="mt-4 text-2xl font-semibold tracking-tight lg:text-3xl text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
               >
                 <span className="flex items-center space-x-4">
                   {" "}

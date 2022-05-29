@@ -111,7 +111,7 @@ const Product = ({ props }) => {
             <motion.div variants={stagger} className="space-y-10">
               <Link href="/" passHref>
                 <motion.div variants={fadeInUp}>
-                  <button className="transition-all duration-200 text-highlight hover:text-highlight-hover hover:underline">
+                  <button className="transition-all duration-200 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline">
                     <span className="flex items-center space-x-4 ">
                       <IoChevronBack /> Back to home
                     </span>
@@ -141,7 +141,7 @@ const Product = ({ props }) => {
                   </motion.div> */}
               <motion.div variants={fadeInUp} className="space-y-5">
                 <span className="font-semibold ">Key Features:</span>
-                <div className="flex flex-col items-start gap-y-2 gap-x-5 ">
+                <div className="flex flex-col items-start-y-2 gap-x-5 ">
                   {featuresList(features)}
                 </div>
               </motion.div>
@@ -159,7 +159,7 @@ const Product = ({ props }) => {
                       <a
                         href={url}
                         target="_blank"
-                        className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover"
+                        className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded bg-highlight hover:bg-highlight-hover dark:bg-highlight-dark dark:hover:bg-highlight-dark-hover"
                       >
                         View Live
                       </a>

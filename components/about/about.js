@@ -83,7 +83,7 @@ const aboutText = [
     <a
       href="/Gareth_Richards_Resume.pdf"
       target="_blank"
-      className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover"
+      className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
     >
       <span className="flex items-center space-x-4 ">
         {" "}

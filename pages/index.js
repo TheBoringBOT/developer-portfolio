@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import { motion } from "framer-motion";
+
+import ThemeSwitch from "../components/layout/Theme-switch";
 
 //import layout
 import Layout from "../components/layout/layout";
@@ -20,25 +21,25 @@ export default function Home(props) {
   const [modalOpen, setModalOpen] = useState(false);
   // check if local storage has
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  //for loading animation on first load
-  useEffect(() => {
-    const showLoader = localStorage.getItem("showLoader");
-    showLoader === "false" ? setIsLoading(false) : setIsLoading(true);
+  // //for loading animation on first load
+  // useEffect(() => {
+  //   const showLoader = localStorage.getItem("showLoader");
+  //   showLoader === "false" ? setIsLoading(false) : setIsLoading(true);
 
-    setTimeout(() => {
-      console.log("loaded");
-      setIsLoading(false);
-      localStorage.setItem("showLoader", false);
-    }, 1000);
-  }, []);
+  //   setTimeout(() => {
+  //     console.log("loaded");
+  //     setIsLoading(false);
+  //     localStorage.setItem("showLoader", false);
+  //   }, 1000);
+  // }, []);
 
   // check if device is mobile - used mostly to stop some animations on mobile
   const isMobile = useWindowSize().width < 768;
   return (
     <>
-      <motion.div exit={{ opacity: 0 }}>
+      <div>
         <Head>
           <title>
             {site_author}
@@ -49,20 +50,18 @@ export default function Home(props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
+        <ThemeSwitch/>
         {modalOpen && <Modal props={props} setModalOpen={setModalOpen} />}
         <Layout setModalOpen={setModalOpen}>
-          {isLoading && <LoadingAnimation />}
-          {!isLoading && (
-            <>
-              <div className="max-w-6xl px-10 mx-auto">
-                <Intro setModalOpen={setModalOpen} />
-                <Projects runAnimation={isMobile ? false : true} />
-              </div>
-              <About />
-            </>
-          )}
+          <>
+            <div className="px-5 mx-auto max-w-6xl lg:px-10">
+              <Intro setModalOpen={setModalOpen} />
+              <Projects runAnimation={isMobile ? false : true} />
+            </div>
+            <About />
+          </>
         </Layout>
-      </motion.div>
+      </div>
     </>
   );
 }

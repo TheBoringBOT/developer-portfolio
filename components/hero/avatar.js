@@ -5,7 +5,7 @@ import ExportedImage from "next-image-export-optimizer";
 export default function Avatar() {
   return (
     <>
-      <div className="relative flex items-center justify-center w-64 h-64 mb-12 rounded-full">
+      <div className="relative flex items-center justify-center w-64 h-64 mb-12 rounded-full sm:h-52 sm:w-52 max-w-[60vw] max-h-[60vw] ">
         <>
           <div className="z-10 w-full h-full p-3 border rounded-full bg-ghost-bg border-ghost-border">
             {/* Add video easter egg on hover ? */}
@@ -27,7 +27,7 @@ export default function Avatar() {
 
           <div className={styles.pulsing}>
             <div
-              className={`${styles.fadein} z-1 bg-pastel-gradient blur-lg rounded-full  w-64 h-64  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`}
+              className={`${styles.fadein} z-1 bg-pastel-gradient blur-lg rounded-full  w-64 h-64  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:h-52 sm:w-52 max-w-[58vw] max-h-[58vw]`}
             ></div>
           </div>
         </>
