@@ -8,15 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        highlight: "#007AFF",
+        highlight: "#0071e3",
         "highlight-hover": "#0077ED",
-        // highlight: "#fe2851",
-        // "highlight-hover": "#fe3d62",
-        black: "#1d1f1c",
+        black: "#151516",
+        "black-2": "#08080a",
         "black-secondary": "#000",
         grey: "#DDDDE1",
         "light-grey": "#F5F5F7",
-        "dark-grey": "#86868B",
+        "dark-grey": "#a1a1a6",
+
+        // dark mode colors
+        "highlight-dark": "#2f84f0",
+        "highlight-dark-hover": "#146ddd",
 
         //used for avatar
         "ghost-bg": "#d6d6d680",
