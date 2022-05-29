@@ -102,7 +102,7 @@ export default function contactForm({ props, setModalOpen }) {
       <div className="md:flex md:items-center">
         <div className="md:w-1/3">
           <button
-            className="px-4 py-2 font-semibold text-white transition-all rounded shadow whitespace-nowrap bg-highlight hover:bg-highlight-hover focus:shadow-outline focus:outline-none"
+            className="px-4 py-2 font-semibold text-white transition-all rounded shadow whitespace-nowrap bg-highlight hover:bg-highlight-hover dark:bg-highlight-dark dark:hover:bg-highlight-dark-hover focus:shadow-outline focus:outline-none"
             type="submit"
           >
             <span>{buttonText}</span>
