@@ -24,14 +24,13 @@ const ThemeSwitch = () => {
   return (
     <div
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className={`flex-start flex h-[50px] w-[100px] rounded-[50px] bg-zinc-100 p-[5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${
+      className={`absolute top-0 right-0 m-5 flex-start flex h-[50px] w-[100px] rounded-[50px] bg-light-grey p-[5px] shadow-inner hover:cursor-pointer dark:bg-white/5 ${
         theme === "light" && "place-content-end"
       }`}
     >
       <motion.div
         className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-black/90"
         layout
-        transition={spring}
       >
         <motion.div whileTap={{ rotate: 360 }}>
           {theme === "light" ? (
