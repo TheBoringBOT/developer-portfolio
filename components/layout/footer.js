@@ -10,7 +10,7 @@ export default function footer({ setModalOpen }) {
     <footer className=" h-[95vh] md:h-[90vh] md:min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white dark:bg-black">
       <div className="flex flex-col items-center max-w-5xl px-5 mx-auto md:px-0">
         <div className="flex flex-col items-center justify-center mt-auto ">
-          <h4 className="pt-10 text-5xl font-bold md:text-6xl gradient-title lg:text-8xl ">
+          <h4 className="pt-10 text-5xl font-bold md:text-6xl gradient-title lg:text-8xl md:max-w-[70vw] ">
             Would you like to contact me?
           </h4>
           <button
