@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import { IoChevronForward } from "react-icons/io5";
-import styles from "./about.module.css";
 
 const changeBlockOpacity = (sectionProgress, blockNo) => {
   const progress = sectionProgress - blockNo;
@@ -29,23 +28,26 @@ const About = () => {
       ) / clientHeight;
     progress = Math.min(
       numOfBlocks - 0.5,
-      Math.max(0.5, percentY * numOfBlocks)
+      Math.max(0.5, percentY * numOfBlocks + -0.3)
     );
   }
 
   return (
-    <div className="text-black min-w-screen bg-light-grey dark:bg-black-secondary dark:text-light-grey">
+    <div
+      ref={refContainer}
+      className="text-black min-w-screen bg-light-grey dark:bg-black-secondary dark:text-light-grey"
+    >
       <div className="flex flex-col items-center justify-center max-w-5xl min-h-screen px-10 py-10 mx-auto text-4xl font-bold lg:px-20 md:py-28 lg:py-36 md:text-6xl lg:text-[80px] ">
-        <div ref={refContainer} className="leading-[1.1]  tracking-tighter">
+        <div className="leading-[1.1]  tracking-tighter">
           {aboutText.map((text, i) => (
             <>
-              <span
+              <div
                 key={i}
                 style={{ opacity: changeBlockOpacity(progress, i) }}
-                className={`${styles.text} inline-block after:content-['_'] my-3`}
+                className="inline-block after:content-['_'] my-3 transition-opacity duration-500"
               >
                 {text}
-              </span>
+              </div>
             </>
           ))}
         </div>
@@ -56,19 +58,34 @@ const About = () => {
 export default About;
 
 const aboutText = [
-  "I’m a full-stack web developer with a diverse skill-set that enables me to work on a wide range of projects.",
-  "I am proficient in JavaScript, React, Redux, Node.js, MySQL, Vue, Laravel and more.",
-  "I also have experience within marketing, SEO, project management, and UI/UX design.",
-  "In my personal life I 💛 to read non-fiction 📕 go 🏂 and 🏃‍♂️💨 in the forest 🌳.",
+  <p className="text-black dark:grad-text">
+    I’m a full-stack web developer with a diverse skill-set that enables me to
+    work on a wide range of projects.
+  </p>,
+  <p className="text-black dark:grad-text">
+    I am proficient in JavaScript, React, Redux, Node.js, MySQL, Vue, Laravel
+    and more.
+  </p>,
+  <p className="text-black dark:grad-text">
+    I also have experience within marketing, SEO, project management, and UI/UX
+    design.
+  </p>,
+  // "In my personal life I 💛 to read non-fiction 📕 go 🏂 and 🏃‍♂️💨 in the forest 🌳.",
+  <p className="text-black dark:grad-text">
+    Some personal interests include reading non-fiction, meditation, running and
+    acting.
+  </p>,
 
   <>
-    <p>Would you like to see a little more detail?</p>
+    <p className="text-black dark:grad-text">
+      Would you like to see a little more detail?
+    </p>
     <a
       href="/Gareth_Richards_Resume.pdf"
       target="_blank"
       className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover"
     >
-      <span className="flex items-center space-x-4">
+      <span className="flex items-center space-x-4 ">
         {" "}
         View Resume <IoChevronForward />{" "}
       </span>
