@@ -23,7 +23,7 @@ export const projectsData = {
     comingSoon: false,
   },
   2: {
-    title: "Spam Word Checker",
+    title: "Spam Checker",
     image:
       "https://placehold.jp/30/9873ff/ffffff/600x600.png?text=placeholder+image+3",
     description:
@@ -57,7 +57,7 @@ export const projectsData = {
       "Audio Search",
     ],
     stack: ["Laravel", "Vue", "MySQL", "Tailwind"],
-    url: "https://soundx.garethricards.dev",
+    url: "https://soundx.garethrichards.dev",
     code: "https://github.com/TheBoringBOT/audioapp-laravel",
     logo: soundXLogo,
     comingSoon: false,
