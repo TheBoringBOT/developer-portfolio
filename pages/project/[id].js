@@ -107,7 +107,7 @@ const Product = ({ props }) => {
 
         {/* project details */}
         <div className="col-span-6 bg-white dark:bg-black dark:text-white lg:h-full">
-          <div className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 xl:px-20 2xl:px-40">
+          <article className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 xl:px-20 2xl:px-40">
             <motion.div variants={stagger} className="space-y-10">
               <Link href="/" passHref>
                 <motion.div variants={fadeInUp}>
@@ -182,7 +182,7 @@ const Product = ({ props }) => {
                 </div>
               </motion.div>
             </motion.div>
-          </div>
+          </article>
         </div>
       </motion.div>
     </section>
