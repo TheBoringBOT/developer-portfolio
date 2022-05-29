@@ -2,8 +2,9 @@
 export const constants = {
   // site details
   site_name: "Developer Portfolio",
-  site_description: "Next.js is a React framework for rapid development",
-  site_url: "https://nextjs.org",
+  site_description:
+    "I'm a full-stack web developer and designer based out of Stockholm, Sweden | Blog coming soon",
+  site_url: "https://garethrichards.dev",
   site_image: "https://nextjs.org/static/images/next-logo.svg",
   site_version: "0.1.0",
 
@@ -11,7 +12,7 @@ export const constants = {
   site_author: "Gareth Richards",
   site_author_short: "Gareth",
   site_author_github: "https://github.com/TheBoringBOT",
-  site_author_email: "#",
+  site_author_email: "hi@garethrichards.dev",
   site_author_image: "#",
   site_author_bio: "#",
 
