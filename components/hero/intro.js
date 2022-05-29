@@ -39,12 +39,12 @@ export default function intro({ setModalOpen }) {
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <span className="block text-2xl font-semibold leading-normal tracking-wide text-grey dark:text-dark-grey">
+              <span className="block text-2xl leading-tight font-semibold tracking-wide text-grey dark:text-dark-grey">
                 Gareth Richards
               </span>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <h1 className="leading-snug dark:text-white text-black text-[2.85rem]  md:text-6xl lg:text-[5.3rem]  font-bold pb-2 ">
+              <h1 className=" dark:text-white text-black text-[2.85rem] leading-none   md:text-6xl lg:text-[5.3rem]  font-bold pb-2 ">
                 Web Developer & Designer.
               </h1>
             </motion.div>
