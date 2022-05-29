@@ -73,7 +73,7 @@ const Product = ({ props }) => {
         initial="initial"
         animate="animate"
         exit={{ opacity: 0 }}
-        className="grid min-h-screen grid-cols-6 md:grid-cols-12 bg-light-grey"
+        className="grid min-h-screen grid-cols-6 md:grid-cols-12 bg-light-grey dark:text-light-grey dark:bg-black-secondary"
       >
         {/* Project mockup */}
         <div className="col-span-6 box lg:h-full">
@@ -106,7 +106,7 @@ const Product = ({ props }) => {
         </div>
 
         {/* project details */}
-        <div className="col-span-6 bg-white lg:h-full">
+        <div className="col-span-6 bg-white dark:bg-black dark:text-white lg:h-full">
           <div className="flex flex-col items-center justify-center h-full px-10 py-16 lg:py-0 xl:px-20 2xl:px-40">
             <motion.div variants={stagger} className="space-y-10">
               <Link href="/" passHref>
@@ -166,7 +166,7 @@ const Product = ({ props }) => {
                       <a
                         target="_blank"
                         href={code}
-                        className="font-normal text-black transition-all hover:text-black hover:underline"
+                        className="font-normal text-black transition-all dark:text-white dark:hover:text-light-grey hover:text-black hover:underline"
                       >
                         <span className="flex items-center space-x-4">
                           {" "}
@@ -207,7 +207,7 @@ const techStack = (stack) => {
     return (
       <span
         key={index}
-        className="px-5 py-2 text-sm rounded bg-light-grey text-dark-grey"
+        className="px-5 py-2 text-sm rounded bg-light-grey text-dark-grey dark:bg-ghost-bg/20 dark:text-light-grey"
       >
         {item}
       </span>

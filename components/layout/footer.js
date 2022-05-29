@@ -10,16 +10,16 @@ export default function footer({ setModalOpen }) {
     <footer className="h-[90vh] min-h-[600px] max-h-[850px] w-full p-0 m-0 mx-auto flex text-center justify-center bg-white dark:bg-black">
       <div className="flex flex-col items-center max-w-5xl px-5 mx-auto md:px-0">
         <div className="flex flex-col items-center justify-center mt-auto ">
-          <h4 className="pt-10 text-5xl font-bold gradient-title md:text-8xl ">
+          <h4 className="pt-10 text-6xl font-bold gradient-title lg:text-8xl ">
             Would you like to contact me?
           </h4>
           <button
             onClick={() => setModalOpen(true)}
-            className="mt-8 text-2xl font-medium transition-all duration-200 text-highlight hover:underline hover:highlight-hover"
+            className="mt-8 text-2xl font-semibold transition-all duration-200 lg:text-3xl text-highlight hover:underline hover:highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
           >
             <span className="flex items-center space-x-4">
               {" "}
-              Send me a message <IoChevronForward />{" "}
+              Send a message <IoChevronForward />{" "}
             </span>
           </button>
         </div>

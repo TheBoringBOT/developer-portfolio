@@ -34,25 +34,24 @@ const fadeInUp = {
 export default function intro({ setModalOpen }) {
   return (
     <>
-      <section className="flex flex-col items-center pb-32 mx-auto text-center  lg:max-w-5xl">
+      <section className="flex flex-col items-center mx-auto text-center pb-36 lg:max-w-5xl">
         <div className="flex flex-col items-center mt-24 lg:mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.div variants={fadeInUp}>
-              <h1 className=" tracking-tight text-xl leading-tight md:text-[2.3rem]  font-bold text-grey block">
+              <span className="block text-2xl font-semibold leading-normal tracking-wide text-grey dark:text-dark-grey">
                 Gareth Richards
-              </h1>
+              </span>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <span className=" tracking-tight text-2xl leading-tight md:text-6xl lg:text-[3.3rem] font-bold  ">
-                Hi, I’m Ariel Beninca. I create well thought out, beautiful
-                digital experiences & inject passion into every project.
-              </span>
+              <h1 className="leading-snug dark:text-light-grey text-black text-[3.3rem]  md:text-6xl lg:text-[5.3rem]  font-bold pb-2 ">
+                Web Developer & Designer.
+              </h1>
             </motion.div>
             <motion.div variants={fadeInUp}>
               <button
                 onClick={setModalOpen}
-                className="mt-4 text-3xl font-semibold tracking-tight text-highlight hover:underline hover:text-highlight-hover"
+                className="mt-4 text-3xl font-semibold tracking-tight text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
               >
                 <span className="flex items-center space-x-4">
                   {" "}
