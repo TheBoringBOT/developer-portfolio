@@ -5,7 +5,7 @@ import ExportedImage from "next-image-export-optimizer";
 export default function Avatar() {
   return (
     <>
-      <div className="relative flex items-center justify-center w-64 h-64 mb-12 rounded-full sm:h-52 sm:w-52 max-w-[60vw] max-h-[60vw] ">
+      <div className="relative flex items-center justify-center w-64 h-64 mb-5 lg:mb-8 rounded-full sm:h-52 sm:w-52 max-w-[60vw] max-h-[60vw] ">
         <>
           <div className="z-10 w-full h-full p-3 border rounded-full bg-ghost-bg border-ghost-border">
             {/* Add video easter egg on hover ? */}
