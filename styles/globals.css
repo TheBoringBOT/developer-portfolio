@@ -106,3 +106,10 @@ a {
   margin-top: 16px;
   padding-bottom: 12px;
 }
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
