@@ -38,14 +38,14 @@ a {
   color: transparent;
   background: linear-gradient(
     91.36deg,
-    #eca658 0%,
+    #ffe588 0%,
     #f391a6 13.02%,
     #e188c3 25.52%,
     #a58de3 37.5%,
     #56abec 49.48%,
-    #737eb7 63.02%,
+    #79b7ff 63.02%,
     #c8638c 72.92%,
-    #dd5d57 84.38%,
+    #e85163 84.38%,
     #df6c51 97.92%
   );
   background-size: 200% 200%;
@@ -89,4 +89,20 @@ a {
   100% {
     background-position: 0% 4%;
   }
+}
+
+.dark .dark\:grad-text {
+  background: radial-gradient(
+    #f5f5f7,
+    #e1e6eb,
+    rgba(213, 226, 232, 0.95),
+    #f5f5f7
+  );
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 16px;
+  padding-bottom: 12px;
 }
