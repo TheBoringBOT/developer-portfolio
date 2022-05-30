@@ -22,7 +22,7 @@ const ThemeSwitch = () => {
   }
 
   return (
-    <div
+    <aside
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       className={`absolute top-0 right-0 m-5 flex-start flex h-[50px] w-[100px] rounded-[50px] bg-light-grey p-[5px] shadow-inner hover:cursor-pointer dark:bg-white/5 ${
         theme === "light" && "place-content-end"
@@ -40,7 +40,7 @@ const ThemeSwitch = () => {
           )}
         </motion.div>
       </motion.div>
-    </div>
+    </aside>
   );
 };
 

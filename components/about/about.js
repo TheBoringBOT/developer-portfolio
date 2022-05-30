@@ -33,26 +33,24 @@ const About = () => {
   }
 
   return (
-    <div
+    <section
       ref={refContainer}
       className="text-black min-w-screen bg-light-grey dark:bg-black-secondary dark:text-light-grey"
     >
       <div className="flex flex-col items-center justify-center max-w-5xl min-h-screen px-5 md:px-10 py-10 mx-auto text-4xl font-bold lg:px-20 md:py-28 lg:py-36 md:text-6xl lg:text-[80px] ">
         <div className="leading-[1.1]  tracking-tighter">
           {aboutText.map((text, i) => (
-            <>
-              <div
-                key={i}
-                style={{ opacity: changeBlockOpacity(progress, i) }}
-                className="inline-block after:content-['_'] my-3 transition-opacity duration-500"
-              >
-                {text}
-              </div>
-            </>
+            <div
+              key={i}
+              style={{ opacity: changeBlockOpacity(progress, i) }}
+              className="inline-block after:content-['_'] my-3 transition-opacity duration-500"
+            >
+              {text}
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default About;

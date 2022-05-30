@@ -131,18 +131,10 @@ const Product = ({ props }) => {
                 {description}
               </motion.p>
 
-              {/* <motion.div variants={fadeInUp} className="space-y-5">
-                    <span className="font-semibold ">Key Features:</span>
-                    <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
-                      <ul className="ml-1 list-decimal">
-                        {featuresList(features)}
-                      </ul>
-                    </div>
-                  </motion.div> */}
               <motion.div variants={fadeInUp} className="space-y-5">
                 <span className="font-semibold ">Key Features:</span>
                 <div className="flex flex-col items-start-y-2 gap-x-5 ">
-                  {featuresList(features)}
+                  <ul className="list-style-none">{featuresList(features)}</ul>
                 </div>
               </motion.div>
               <motion.div variants={fadeInUp} className="space-y-5">
@@ -219,10 +211,10 @@ const techStack = (stack) => {
 const featuresList = (features) => {
   return features.map((item, index) => {
     return (
-      <span key={index} className="relative">
+      <li key={index} className="relative">
         <span className="absolute left-0 ">{index + 1}.</span>
         <span className="ml-5 ">{item}</span>
-      </span>
+      </li>
     );
   });
 };

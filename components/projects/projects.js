@@ -54,7 +54,7 @@ export default function Projects() {
 
   //TODO create a function to create two columns of cards with one array and not two seperate ones
   return (
-    <>
+    <section className="max-w-6xl px-5 mx-auto lg:px-10">
       <div className="grid pb-20 mt-10 space-y-8 md:grid-cols-2 md:gap-10 md-space-y-0 md:pb-24 lg:pb-30 ">
         {/* column 1 */}
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
@@ -80,30 +80,34 @@ export default function Projects() {
           </motion.div>
         </motion.div>
       </div>
-    </>
+    </section>
   );
 }
 
 const projectCard = ({ project, index }) => {
   return (
-    <Link href={project.url} key={index} passHref>
-      <a>
-        <div
-          className="transition-transform duration-200 cursor-pointer rounded md:rounded-xl lg:rounded-2xl
+    <article>
+      <Link href={project.url} key={index} passHref>
+        <a>
+          <span className="sr-only">View {project.title} project</span>
+
+          <div
+            className="transition-transform duration-200 cursor-pointer rounded md:rounded-xl lg:rounded-2xl
       w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey dark:bg-white/5 transition-bg duration-300 flex flex-1 pt-[100%] relative "
-        >
-          <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
-            {/* <ExportedImage
+          >
+            <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
+              {/* <ExportedImage
               objectFit="contain"
               layout="fill"
               alt={project.title}
               className="w-full h-full overflow-hidden rounded md:rounded-xl lg:rounded-2xl "
               src={project.image}
             /> */}
+            </div>
           </div>
-        </div>
-      </a>
-    </Link>
+        </a>
+      </Link>
+    </article>
   );
 };
 
@@ -113,13 +117,13 @@ const projectsLeft = [
   {
     image:
       "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
-    title: "Project 1",
+    title: "E-commerce store",
     url: "/project/1",
   },
   {
     image:
       "https://placehold.jp/30/ffcc00/ffffff/600x600.png?text=placeholder+image+2",
-    title: "Project 2",
+    title: "Email Spam Checker",
     url: "/project/2",
   },
 ];
@@ -127,13 +131,13 @@ const projectsRight = [
   {
     image:
       "https://placehold.jp/30/9873ff/ffffff/600x600.png?text=placeholder+image+3",
-    title: "Project 3",
+    title: "Sound sharing website",
     url: "/project/3",
   },
   {
     image:
       "https://placehold.jp/30/ff763c/ffffff/600x600.png?text=placeholder+image+4",
-    title: "Project 4",
+    title: "Agency website & blog",
     url: "/project/4",
   },
 ];

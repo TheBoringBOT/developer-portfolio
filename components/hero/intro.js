@@ -34,7 +34,7 @@ const fadeInUp = {
 export default function intro({ setModalOpen }) {
   return (
     <>
-      <section className="flex flex-col items-center mx-auto text-center pb-28 xl:pb-36 lg:max-w-5xl">
+      <section className="flex flex-col items-center mx-auto text-center pb-28 xl:pb-36 lg:max-w-5xl max-w-6xl px-5 mx-auto lg:px-10">
         <div className="flex flex-col items-center mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">

@@ -50,16 +50,12 @@ export default function Home(props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <ThemeSwitch/>
+        <ThemeSwitch />
         {modalOpen && <Modal props={props} setModalOpen={setModalOpen} />}
         <Layout setModalOpen={setModalOpen}>
-          <>
-            <div className="px-5 mx-auto max-w-6xl lg:px-10">
-              <Intro setModalOpen={setModalOpen} />
-              <Projects runAnimation={isMobile ? false : true} />
-            </div>
-            <About />
-          </>
+          <Intro setModalOpen={setModalOpen} />
+          <Projects runAnimation={isMobile ? false : true} />
+          <About />
         </Layout>
       </div>
     </>
