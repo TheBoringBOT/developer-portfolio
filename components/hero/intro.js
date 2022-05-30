@@ -34,7 +34,7 @@ const fadeInUp = {
 export default function intro({ setModalOpen }) {
   return (
     <>
-      <section className="flex flex-col items-center mx-auto text-center pb-28 xl:pb-36 lg:max-w-5xl max-w-6xl px-5 mx-auto lg:px-10">
+      <section className="flex flex-col items-center max-w-6xl px-5 mx-auto text-center pb-28 xl:pb-36 lg:max-w-5xl lg:px-10">
         <div className="flex flex-col items-center mt-32 ">
           <Avatar />
           <motion.div variants={stagger} initial="initial" animate="animate">
@@ -53,9 +53,9 @@ export default function intro({ setModalOpen }) {
                 onClick={setModalOpen}
                 className="mt-4 text-2xl font-semibold tracking-tight lg:text-3xl text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
               >
-                <span className="flex items-center space-x-4">
+                <span className="flex items-end space-x-4">
                   {" "}
-                  Contact Me <IoChevronForward />{" "}
+                  Contact me <IoChevronForward className="mb-[1px]" />{" "}
                 </span>
               </button>
             </motion.div>

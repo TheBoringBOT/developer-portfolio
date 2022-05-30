@@ -17,7 +17,7 @@ export default function footer({ setModalOpen }) {
             onClick={() => setModalOpen(true)}
             className="mt-8 text-2xl font-semibold transition-all duration-200 lg:text-3xl text-highlight hover:underline hover:highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
           >
-            <span className="flex items-center space-x-4">
+            <span className="flex items-end space-x-4">
               {" "}
               Send a message <IoChevronForward />{" "}
             </span>

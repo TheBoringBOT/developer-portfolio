@@ -83,8 +83,7 @@ const aboutText = [
       target="_blank"
       className="mt-3 font-bold transition-all duration-200 text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
     >
-      <span className="flex items-center space-x-4 ">
-        {" "}
+      <span className="flex items-end space-x-4 ">
         View Resume <IoChevronForward />{" "}
       </span>
     </a>
