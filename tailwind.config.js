@@ -11,10 +11,10 @@ module.exports = {
         highlight: "#0071e3",
         "highlight-hover": "#0077ED",
         black: "#151516",
-        "black-2": "#08080a",
+        "black-2": "#1d1d1f",
         "black-secondary": "#000",
         grey: "#DDDDE1",
-        "light-grey": "#F5F5F7",
+        "light-grey": "#F2F2F2",
         "dark-grey": "#a1a1a6",
 
         // dark mode colors
