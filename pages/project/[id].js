@@ -133,18 +133,20 @@ const Product = (project) => {
                     </button>
                   </motion.div>
                 </Link>
-                <motion.div variants={fadeInUp}>
-                  <figure>
-                    <ExportedImage
-                      objectFit="contain"
-                      priority={true}
-                      src={logo}
-                      alt={title}
-                      width="100%"
-                      height="70"
-                    />
-                  </figure>
-                </motion.div>
+                {logo && (
+                  <motion.div variants={fadeInUp}>
+                    <figure>
+                      <ExportedImage
+                        objectFit="contain"
+                        priority={true}
+                        src={logo}
+                        alt={title}
+                        width="100%"
+                        height="70"
+                      />
+                    </figure>
+                  </motion.div>
+                )}
                 <motion.h1
                   className="text-4xl font-bold leading-tight xl:text-6xl"
                   variants={fadeInUp}
