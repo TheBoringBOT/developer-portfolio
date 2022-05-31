@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import ExportedImage from "next-image-export-optimizer";
+import { IoChevronForward } from "react-icons/io5";
 import useWindowSize from "../../hooks/useWindowSize";
 
 //framer motion imports for parallax
@@ -55,7 +56,7 @@ export default function Projects() {
   //TODO create a function to create two columns of cards with one array and not two seperate ones
   return (
     <section className="max-w-6xl px-5 mx-auto lg:px-10">
-      <div className="grid pb-20 mt-10 space-y-8 md:grid-cols-2 md:gap-10 md-space-y-0 md:pb-24 lg:pb-30 ">
+      <div className="grid pb-20 mt-10 space-y-8 md:grid-cols-2 md:gap-5 md-space-y-0 md:pb-24 lg:pb-30 ">
         {/* column 1 */}
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <motion.div
@@ -87,26 +88,66 @@ export default function Projects() {
 const projectCard = ({ project, index }) => {
   return (
     <article>
-      <Link href={project.url} key={index} passHref>
-        <a>
-          <span className="sr-only">View {project.title} project</span>
+      <span className="sr-only">View {project.title} project</span>
 
-          <div
-            className="transition-transform duration-200 cursor-pointer rounded md:rounded-xl lg:rounded-2xl
-      w-full h-full min-w-full min-h-full overflow-hidden bg-light-grey dark:bg-white/5 transition-bg duration-300 flex flex-1 pt-[100%] relative "
-          >
-            <div className="w-full h-full hover:scale-[103%] transition-transform absolute top-0 left-0  ">
-              {/* <ExportedImage
-              objectFit="contain"
-              layout="fill"
-              alt={project.title}
-              className="w-full h-full overflow-hidden rounded md:rounded-xl lg:rounded-2xl "
-              src={project.image}
-            /> */}
+      <div
+        className="card transition-transform duration-200  rounded md:rounded-xl lg:rounded-2xl
+      w-full h-full min-w-full  overflow-hidden bg-light-grey dark:bg-[#1c1c1f] transition-bg duration-300 flex flex-1  pt-[130%] min-h-[630px]  relative "
+      >
+        {/* card text */}
+        <div className="absolute top-0 left-0 z-10 w-full h-full">
+          <div className="flex items-start justify-center w-full h-full pt-20">
+            <div className="flex flex-col items-center justify-center px-5 space-y-3 lg:px-8 ">
+              <h3 className="text-5xl font-semibold text-center text-black dark:text-white">
+                {project.title}
+              </h3>
+              <p className="px-5 font-normal text-center text-md lg:text-xl text-black-2 dark:text-light-grey lg:px-10">
+                {project.description}
+              </p>
+              <div className="flex items-center space-x-5 duration-300 text-md lg:text-lg transiton-all">
+                {project.comingSoon ? (
+                  <div className="flex items-center space-y-3 ">
+                    <span className="px-5 py-2 font-semibold text-blue-500 transition-all duration-200 pointer-events-none animate-pulse">
+                      Coming Soon
+                    </span>
+                  </div>
+                ) : (
+                  <>
+                    <a
+                      target="_blank"
+                      className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline"
+                      href={project.live}
+                    >
+                      View Live <IoChevronForward />
+                    </a>
+                    <Link href={project.url} key={index} passHref>
+                      <a className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline">
+                        Info <IoChevronForward />
+                      </a>
+                    </Link>
+                  </>
+                )}
+              </div>
             </div>
           </div>
-        </a>
-      </Link>
+        </div>
+
+        <div className="absolute bottom-0 left-0 w-full h-full ">
+          <div className="relative flex justify-center h-full">
+            <div className="relative flex items-end w-full mt-auto -mb-16 transition-all duration-300 will-change card-image h-[65%]">
+              <ExportedImage
+                objectFit="contain"
+                quality={100}
+                layout="fill"
+                alt={project.title}
+                className="bottom-0 w-full h-full"
+                src={project.image}
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   );
 };
@@ -115,29 +156,40 @@ const projectCard = ({ project, index }) => {
 
 const projectsLeft = [
   {
-    image:
-      "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
-    title: "E-commerce store",
+    image: "/images/card/sirene.png",
+    title: "E-commerce",
+    description:
+      "A minimal e-commerce store with checkout, filtering and more.",
+    live: "https://sirene.garethrichards.dev",
+    comingSoon: false,
     url: "/project/1",
   },
   {
-    image:
-      "https://placehold.jp/30/ffcc00/ffffff/600x600.png?text=placeholder+image+2",
-    title: "Email Spam Checker",
+    image: "/images/card/spam.png",
+    title: "Spam Checker",
+    description: "Check email content for spam word triggers and read time",
+    comingSoon: false,
+    live: "https://spamchecker.garethrichards.dev",
     url: "/project/2",
   },
 ];
 const projectsRight = [
   {
-    image:
-      "https://placehold.jp/30/9873ff/ffffff/600x600.png?text=placeholder+image+3",
-    title: "Sound sharing website",
+    image: "/images/card/soundx.png",
+    title: "Audio platform",
+    description:
+      "Sound sharing platform for creators to freely share their sounds",
+    comingSoon: false,
+    live: "https://soundx.garethrichards.dev",
     url: "/project/3",
   },
   {
-    image:
-      "https://placehold.jp/30/ff763c/ffffff/600x600.png?text=placeholder+image+4",
-    title: "Agency website & blog",
+    image: "/images/card/moo.png",
+    title: "Agency website",
+    description: "Website with advanced scroll animations and a markdown blog",
+
+    comingSoon: true,
+    live: "",
     url: "/project/4",
   },
 ];
