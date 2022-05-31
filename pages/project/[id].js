@@ -4,12 +4,9 @@ import { IoChevronForward, IoChevronBack } from "react-icons/io5";
 import Link from "next/link";
 import ErrorPage from "next/error";
 import ExportedImage from "next-image-export-optimizer";
-
-import { projectsData } from "../../data/projects";
-
-const getProject = (id) => {
-  return projectsData[id];
-};
+// Fetching data from the JSON file
+import fsPromises from "fs/promises";
+import path from "path";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -37,13 +34,12 @@ const fadeInUp = {
   },
 };
 
-// const currentProject = projectsData[id];
-
-const Product = ({ props }) => {
+const Product = (project) => {
+  console.table(project);
   // return 404 if no project matching id
-  if (!props.project) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!props) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
   const {
     title,
     image,
@@ -57,7 +53,7 @@ const Product = ({ props }) => {
     videoPoster,
     features,
     comingSoon,
-  } = projectsData[props.project];
+  } = project;
 
   return (
     <section>
@@ -107,8 +103,8 @@ const Product = ({ props }) => {
                     className="z-10 w-full h-full "
                   />
                   <video
-                    loop="true"
-                    autoPlay="autoplay"
+                    loop
+                    autoPlay
                     muted
                     className="absolute top-[5%] left-[1%] w-[98%] h-[73%] "
                     src={video}
@@ -121,7 +117,7 @@ const Product = ({ props }) => {
         </div>
 
         {/* project details */}
-        <div className="col-span-6 bg-white md:overflow-y-scroll dark:bg-black-secondary dark:text-light-grey md:h-screen">
+        <div className="z-50 col-span-6 bg-white md:overflow-y-scroll dark:bg-black-secondary dark:text-light-grey md:h-screen">
           <article className="flex flex-col items-center justify-center min-h-screen mr-auto max-w-7xl">
             <div className="flex h-full no-scrollbar">
               <motion.div
@@ -138,7 +134,16 @@ const Product = ({ props }) => {
                   </motion.div>
                 </Link>
                 <motion.div variants={fadeInUp}>
-                  <figure>{logo}</figure>
+                  <figure>
+                    <ExportedImage
+                      objectFit="contain"
+                      priority={true}
+                      src={logo}
+                      alt={title}
+                      width="100%"
+                      height="70"
+                    />
+                  </figure>
                 </motion.div>
                 <motion.h1
                   className="text-4xl font-bold leading-tight xl:text-6xl"
@@ -205,17 +210,36 @@ const Product = ({ props }) => {
   );
 };
 
-//id in url
-Product.getInitialProps = ({ query: { id } }) => {
-  const project = id;
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const filePath = path.join(process.cwd(), "data/projects.json");
+  const jsonData = await fsPromises.readFile(filePath);
+  const projectsData = await JSON.parse(jsonData);
 
-  console.table(project);
-  return {
-    props: {
-      project,
-    },
-  };
-};
+  // Get the paths we want to pre-render based on posts
+  const paths = projectsData.map((project) => ({
+    params: { id: project.id.toString() },
+  }));
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  // Call an external API endpoint to get posts
+  const filePath = path.join(process.cwd(), "data/projects.json");
+  const jsonData = await fsPromises.readFile(filePath);
+  const projectsData = JSON.parse(jsonData);
+  const project = projectsData[params.id - 1];
+
+  // Pass post data to the page via props
+  return { props: project };
+}
 
 // map tech stack
 const techStack = (stack) => {
