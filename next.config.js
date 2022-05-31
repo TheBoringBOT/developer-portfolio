@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  exportTrailingSlash: true,
   reactStrictMode: false,
   images: {
     loader: "custom",
