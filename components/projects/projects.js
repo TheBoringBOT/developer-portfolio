@@ -87,7 +87,7 @@ export default function Projects() {
 
 const projectCard = ({ project, index }) => {
   return (
-    <article>
+    <article key={index}>
       <span className="sr-only">View {project.title} project</span>
 
       <div
