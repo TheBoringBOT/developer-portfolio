@@ -7,7 +7,7 @@ export default function Avatar() {
     <>
       <div className="relative flex items-center justify-center w-64 h-64 mb-5 lg:mb-8 rounded-full sm:h-52 sm:w-52 max-w-[60vw] max-h-[60vw] ">
         <>
-          <div className="z-10 w-full h-full p-3 border rounded-full avatar bg-ghost-bg border-ghost-border">
+          <div className="relative z-10 w-full h-full p-3 border rounded-full avatar bg-ghost-bg border-ghost-border">
             {/* Add video easter egg on hover ? */}
             <video
               src="/images/avatar.mp4"
