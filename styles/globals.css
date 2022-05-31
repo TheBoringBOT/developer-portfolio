@@ -113,3 +113,17 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+/* project card  */
+.card:hover .card-image {
+  transform: translateY(50px) scale3d(1.01, 1.01, 1);
+  transition: all 0.3s ease;
+  backface-visibility: hidden;
+}
+.card-links {
+  opacity: 0;
+}
+
+.card:hover .card-links {
+  opacity: 1;
+}
