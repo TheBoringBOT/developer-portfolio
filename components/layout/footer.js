@@ -29,6 +29,7 @@ export default function footer({ setModalOpen }) {
               className="hover:text-black dark:hover:text-light-grey"
               href="https://github.com/TheBoringBOT"
               target="_blank"
+              rel="noreferrer"
             >
               <IoLogoGithub size={22} />
             </a>

@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 
-export default function contactForm({ props, setModalOpen }) {
+export default function ContactForm({ props, setModalOpen }) {
   const { register, handleSubmit } = useForm();
 
   const [buttonText, setButtonText] = useState("Send");
@@ -88,7 +88,7 @@ export default function contactForm({ props, setModalOpen }) {
           ></textarea>
           <div className="flex items-center justify-start">
             <p className="mr-2 text-xs italic text-gray-600 dark:text-light-grey">
-              Don't like forms?
+              Email me directly?
             </p>
             <a
               className="text-xs text-gray-600 underline dark:text-light-grey "

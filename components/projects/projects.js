@@ -108,6 +108,7 @@ const projectCard = ({ project, index }) => {
                 {!project.comingSoon && (
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline"
                     href={project.live}
                   >

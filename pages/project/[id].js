@@ -108,7 +108,7 @@ const Product = ({ props }) => {
                   />
                   <video
                     loop="true"
-                    autoplay="autoplay"
+                    autoPlay="autoplay"
                     muted
                     className="absolute top-[5%] left-[1%] w-[98%] h-[73%] "
                     src={video}
@@ -123,10 +123,10 @@ const Product = ({ props }) => {
         {/* project details */}
         <div className="col-span-6 bg-white md:overflow-y-scroll dark:bg-black-secondary dark:text-light-grey md:h-screen">
           <article className="flex flex-col items-center justify-center min-h-screen mr-auto max-w-7xl">
-            <div className="flex h-full px-10 no-scrollbar">
+            <div className="flex h-full no-scrollbar">
               <motion.div
                 variants={stagger}
-                className="px-10 py-16 space-y-10 lg:py-20 xl:px-20 2xl:px-40"
+                className="px-5 py-16 space-y-10 md:px-10 lg:py-20 xl:px-20 2xl:px-40"
               >
                 <Link href="/" passHref>
                   <motion.div variants={fadeInUp}>
@@ -172,12 +172,14 @@ const Product = ({ props }) => {
                         <a
                           href={url}
                           target="_blank"
+                          rel="noreferrer"
                           className="px-5 py-2 font-semibold text-white transition-all duration-200 rounded whitespace-nowrap bg-highlight hover:bg-highlight-hover dark:bg-highlight-dark dark:hover:bg-highlight-dark-hover"
                         >
                           View Live
                         </a>
                         <a
                           target="_blank"
+                          rel="noreferrer"
                           href={code}
                           className="font-normal text-black transition-all whitespace-nowrap dark:text-white dark:hover:text-light-grey hover:text-black hover:underline"
                         >

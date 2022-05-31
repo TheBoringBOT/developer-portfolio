@@ -56,20 +56,20 @@ const About = () => {
 export default About;
 
 const aboutText = [
-  <p className="text-black dark:grad-text">
+  <p key={0} className="text-black dark:grad-text">
     I’m a full-stack web developer with a diverse skill-set that enables me to
     work on a wide range of projects.
   </p>,
-  <p className="text-black dark:grad-text">
+  <p key={1} className="text-black dark:grad-text">
     I am proficient in JavaScript, React, Redux, Node.js, MySQL, Vue, Laravel
     and more.
   </p>,
-  <p className="text-black dark:grad-text">
+  <p key={2} className="text-black dark:grad-text">
     I also have experience within marketing, SEO, project management, and UI/UX
     design.
   </p>,
   // "In my personal life I 💛 to read non-fiction 📕 go 🏂 and 🏃‍♂️💨 in the forest 🌳.",
-  <p className="text-black dark:grad-text">
+  <p key={3} className="text-black dark:grad-text">
     Some personal interests include reading non-fiction, meditation, running and
     acting.
   </p>,
