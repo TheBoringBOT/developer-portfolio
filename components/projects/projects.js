@@ -61,7 +61,7 @@ export default function Projects() {
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <motion.div
             style={{ y: runAnimation ? yValue1 : 0 }}
-            className="flex flex-col space-y-8"
+            className="flex flex-col space-y-5"
           >
             {projectsLeft.map((project, index) => {
               return projectCard({ project, index });
@@ -73,7 +73,7 @@ export default function Projects() {
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <motion.div
             style={{ y: runAnimation ? yValue2 : 0 }}
-            className="flex flex-col space-y-8"
+            className="flex flex-col space-y-5"
           >
             {projectsRight.map((project, index) => {
               return projectCard({ project, index });
@@ -105,28 +105,20 @@ const projectCard = ({ project, index }) => {
                 {project.description}
               </p>
               <div className="flex items-center space-x-5 duration-300 text-md lg:text-lg transiton-all">
-                {project.comingSoon ? (
-                  <div className="flex items-center space-y-3 ">
-                    <span className="px-5 py-2 font-semibold text-blue-500 transition-all duration-200 pointer-events-none animate-pulse">
-                      Coming Soon
-                    </span>
-                  </div>
-                ) : (
-                  <>
-                    <a
-                      target="_blank"
-                      className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline"
-                      href={project.live}
-                    >
-                      View Live <IoChevronForward />
-                    </a>
-                    <Link href={project.url} key={index} passHref>
-                      <a className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline">
-                        Info <IoChevronForward />
-                      </a>
-                    </Link>
-                  </>
+                {!project.comingSoon && (
+                  <a
+                    target="_blank"
+                    className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline"
+                    href={project.live}
+                  >
+                    View Live <IoChevronForward />
+                  </a>
                 )}
+                <Link href={project.url} key={index} passHref>
+                  <a className="flex items-center space-x-3 transition-all duration-300 text-highlight hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover hover:underline">
+                    Info <IoChevronForward />
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -134,7 +126,7 @@ const projectCard = ({ project, index }) => {
 
         <div className="absolute bottom-0 left-0 w-full h-full ">
           <div className="relative flex justify-center h-full">
-            <div className="relative flex items-end w-full mt-auto -mb-16 transition-all duration-300 will-change card-image h-[65%]">
+            <div className="relative flex items-end w-full mt-auto -mb-16 transition-all duration-300 will-change card-image h-[63%]">
               <ExportedImage
                 objectFit="contain"
                 quality={100}
@@ -143,6 +135,7 @@ const projectCard = ({ project, index }) => {
                 className="bottom-0 w-full h-full"
                 src={project.image}
                 loading="eager"
+                priority={true}
               />
             </div>
           </div>

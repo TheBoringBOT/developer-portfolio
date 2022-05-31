@@ -53,6 +53,8 @@ const Product = ({ props }) => {
     url,
     code,
     logo,
+    video,
+    videoPoster,
     features,
     comingSoon,
   } = projectsData[props.project];
@@ -76,11 +78,15 @@ const Product = ({ props }) => {
         className="grid min-h-screen grid-cols-6 md:grid-cols-12 "
       >
         {/* Project mockup */}
-        <div className="col-span-6 box bg-light-grey dark:text-light-grey dark:bg-black-secondary">
-          <div className="flex items-center justify-center md:h-full ">
-            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
+        <div className="col-span-6 box bg-light-grey dark:text-light-grey dark:bg-black">
+          <div className="relative flex items-center justify-center ml-auto md:h-full max-w-7xl ">
+            <motion.div
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              className="flex h-auto basis-3/5"
+            >
               <motion.div
-                className="h-auto w-[450px] max-w-[45vw] p-20 relative pt-[100%] "
+                className="relative w-full "
                 key={image}
                 animate={{ x: 0, opacity: 1 }}
                 initial={{ x: 200, opacity: 0 }}
@@ -92,13 +98,22 @@ const Product = ({ props }) => {
                 }}
               >
                 {" "}
-                <figure className="w-full h-full ">
+                <figure className="relative w-full h-full pt-[100%] pointer-events-none">
                   <ExportedImage
                     objectFit="contain"
                     layout="fill"
-                    src={image}
-                    className="absolute top-0 left-0 w-full h-full "
+                    priority={true}
+                    src="/images/project/mockup.png"
+                    className="z-10 w-full h-full "
                   />
+                  <video
+                    loop="true"
+                    autoplay="autoplay"
+                    muted
+                    className="absolute top-[5%] left-[1%] w-[98%] h-[73%] "
+                    src={video}
+                    poster={videoPoster}
+                  ></video>
                 </figure>
               </motion.div>
             </motion.div>
@@ -106,8 +121,8 @@ const Product = ({ props }) => {
         </div>
 
         {/* project details */}
-        <div className="col-span-6 overflow-y-scroll bg-white dark:bg-black dark:text-white md:h-screen">
-          <article className="flex flex-col items-center justify-center ">
+        <div className="col-span-6 bg-white md:overflow-y-scroll dark:bg-black-secondary dark:text-light-grey md:h-screen">
+          <article className="flex flex-col items-center justify-center min-h-screen mr-auto max-w-7xl">
             <div className="flex h-full px-10 no-scrollbar">
               <motion.div
                 variants={stagger}

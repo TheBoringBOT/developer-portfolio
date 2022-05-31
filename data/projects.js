@@ -3,8 +3,8 @@ import { soundXLogo, spamCheckerLogo, sireneLogo } from "./logo-data";
 export const projectsData = {
   1: {
     title: "E-commerce Store",
-    image:
-      "https://placehold.jp/30/dd6699/ffffff/600x600.png?text=placeholder+image+1",
+    video: "/images/project/sirene.mp4",
+    videoPoster: "/images/project/sirene.png",
     description:
       "Sirène is a full-stack e-commerce store with a clean modern polished design that enables customers to find and purchase products smoothly.",
     description_short:
@@ -24,8 +24,8 @@ export const projectsData = {
   },
   2: {
     title: "Spam Checker",
-    image:
-      "https://placehold.jp/30/9873ff/ffffff/600x600.png?text=placeholder+image+3",
+    video: "/images/project/spam.mp4",
+    videoPoster: "/images/project/spam.png",
     description:
       "A text editor for writing email copy that checks the content in real-time for known spam word triggers and highlights the offending words.",
     description_short:
@@ -44,8 +44,8 @@ export const projectsData = {
   },
   3: {
     title: "Sound Sharing",
-    image:
-      "https://placehold.jp/30/ffcc00/ffffff/600x600.png?text=placeholder+image+2",
+    video: "/images/project/soundx.mp4",
+    videoPoster: "/images/project/soundx.png",
     description:
       "A sound sharing website for users to create a profile to display their sounds & fx and for others to download freely.",
     description_short:
@@ -65,8 +65,8 @@ export const projectsData = {
 
   4: {
     title: "Studio Moo",
-    image:
-      "https://placehold.jp/30/ff763c/ffffff/600x600.png?text=placeholder+image+4",
+    video: "/images/project/moo.mp4",
+    videoPoster: "/images/project/moo.png",
     description:
       "Studio Moo is an agency website with a focus on clean modern design that utilizes smooth refined animations and striking composition.",
     description_short:
@@ -77,7 +77,6 @@ export const projectsData = {
       "Advanced animations",
       "Modern UI/UX",
     ],
-
     stack: ["React", "Next.js", "Tailwind", "Framer motion"],
     url: "https://www.google.com",
     code: "https://www.google.com",
