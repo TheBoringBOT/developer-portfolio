@@ -7,20 +7,20 @@ export default function Avatar() {
     <>
       <div className="relative flex items-center justify-center w-64 h-64 mb-5 lg:mb-8 rounded-full sm:h-52 sm:w-52 max-w-[60vw] max-h-[60vw] ">
         <>
-          <div className="z-10 w-full h-full p-3 border rounded-full bg-ghost-bg border-ghost-border">
+          <div className="avatar z-10 w-full h-full p-3 border rounded-full bg-ghost-bg border-ghost-border">
             {/* Add video easter egg on hover ? */}
-            {/* <video
-              src="/test2.mp4"
-              className="object-cover w-full h-full rounded-full "
+            <video
+              src="/images/avatar.mp4"
+              className="z-10 object-cover w-full h-full rounded-full "
               autoPlay
               loop
               muted
-            /> */}
+            />
             <ExportedImage
               layout="fill"
               objectFit="contain"
-              className="w-full h-full p-3 rounded-full "
-              src="https://i.pravatar.cc/300"
+              className="avatar-img w-full h-full p-3 rounded-full z-5 hidden"
+              src="/images/avatar.png"
               alt="Gareth Richards"
             />
           </div>

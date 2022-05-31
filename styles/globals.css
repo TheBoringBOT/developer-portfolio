@@ -128,4 +128,9 @@ img {
   opacity: 1;
 }
 
-
+.avatar:hover .avatar-img {
+  display: block !important;
+}
+.avatar:hover .avatar video {
+  display: none !important;
+}
