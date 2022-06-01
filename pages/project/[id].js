@@ -159,15 +159,15 @@ const Product = (project) => {
 
                 <motion.div variants={fadeInUp} className="space-y-5">
                   <span className="font-semibold ">Key Features:</span>
-                  <div className="flex flex-col items-start-y-2 gap-x-5 ">
-                    <ul className="list-style-none">
+                  <div className="flex flex-col space-x-5 ">
+                    <ul className="space-y-2 list-style-none">
                       {featuresList(features)}
                     </ul>
                   </div>
                 </motion.div>
                 <motion.div variants={fadeInUp} className="space-y-5">
                   <span className="font-semibold ">Tech Stack:</span>
-                  <div className="flex flex-wrap items-center gap-y-5 gap-x-5 ">
+                  <div className="flex flex-wrap w-full max-w-screen-sm gap-3 -m-1">
                     {techStack(stack)}
                   </div>
                 </motion.div>
