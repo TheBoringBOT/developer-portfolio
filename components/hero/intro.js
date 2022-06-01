@@ -53,7 +53,7 @@ export default function intro({ setModalOpen }) {
                 onClick={setModalOpen}
                 className="mt-4 text-2xl font-semibold tracking-tight lg:text-3xl text-highlight hover:underline hover:text-highlight-hover dark:text-highlight-dark dark:hover:text-highlight-dark-hover"
               >
-                <span className="flex items-end space-x-4">
+                <span className="flex items-end space-x-4 font-medium">
                   {" "}
                   Contact me <IoChevronForward className="mb-[1px]" />{" "}
                 </span>
