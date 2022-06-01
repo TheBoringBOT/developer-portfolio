@@ -8,12 +8,18 @@
 # testing
 /coverage
 
+
 # next.js
 /.next/
 /out/
 
 # production
 /build
+
+# exported images on build
+/public/images/card/nextImageExportOptimizer
+/public/images/project/nextImageExportOptimizer
+/public/images/nextImageExportOptimizer
 
 # misc
 .DS_Store
