@@ -2,7 +2,7 @@ import { useRef } from "react";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import { IoChevronForward } from "react-icons/io5";
 
-const changeBlockOpacity = (sectionProgress, blockNo) => {
+const changeBlockOpacity = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
   if (progress >= 0 && progress < 1) return 1;
   return 0.08;
@@ -10,7 +10,6 @@ const changeBlockOpacity = (sectionProgress, blockNo) => {
 
 const About = () => {
   const scrollYPosition = useScrollPosition();
-
   const refContainer = useRef(null);
 
   // the amount of text blocks there are. Now just taking from array length
@@ -56,20 +55,20 @@ const About = () => {
 export default About;
 
 const aboutText = [
-  <p key={0} className="text-black dark:grad-text">
+  <p className="text-black dark:grad-text">
     I’m a full-stack web developer with a diverse skill-set that enables me to
     work on a wide range of projects.
   </p>,
-  <p key={1} className="text-black dark:grad-text">
+  <p className="text-black dark:grad-text">
     I am proficient in JavaScript, React, Redux, Node.js, MySQL, Vue, Laravel
     and more.
   </p>,
-  <p key={2} className="text-black dark:grad-text">
+  <p className="text-black dark:grad-text">
     I also have experience within marketing, SEO, project management, and UI/UX
     design.
   </p>,
-  // "In my personal life I 💛 to read non-fiction 📕 go 🏂 and 🏃‍♂️💨 in the forest 🌳.",
-  <p key={3} className="text-black dark:grad-text">
+
+  <p className="text-black dark:grad-text">
     Some personal interests include reading non-fiction, meditation, running and
     acting.
   </p>,
